@@ -15,9 +15,16 @@
 
 body{
     font-family: 'Poppins', sans-serif;
-    background: #04082ee8;
-    
+    background: linear-gradient(
+      135deg, /* Angle of the gradient */
+      #04082ee8, 
+      #174699e8, 
+      #1e3a8ae8, 
+      #174699e8, 
+      #04082ee8
+    );
 }
+
 
 /*------------ Login container ------------*/
 
