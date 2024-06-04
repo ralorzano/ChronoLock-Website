@@ -13392,7 +13392,16 @@ label {
   color: #ffffff;
   background-color: #04082E;
   font-weight: bold;
+  
 }
+
+.active-menu {
+    background-color: #04082E !important;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+
 .sidebar .sidebar-inner .section-title {
   padding: 1.25rem 1.56rem 1rem;
   font-weight: bolder;

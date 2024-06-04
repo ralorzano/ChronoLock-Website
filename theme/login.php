@@ -17,18 +17,18 @@
     <div class="background-container">
 
         <!----------------------- Login Container -------------------------->
-        <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="container d-flex justify-content-center align-items-center min-vh-100 animate-text">
             <div class="row border rounded-5 p-3 bg-white shadow-lg p-3 bg-body-tertiary box-area">
                 <!--------------------------- Left Box ----------------------------->
 
                 <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style=" background: linear-gradient(
-                    135deg, /* Angle of the gradient */
+                    120deg, /* Angle of the gradient */
                     #04082ee8, 
                     #174699e8, 
                     #174699e8, 
                     #04082ee8
                   );">
-                    <p class="text-white fs-1 mt-2" style="font-weight: 600;">ChronoLock</p>
+                    <p class="text-white mt-2 animate-text" style="font-weight: 700; font-size: 60px;">ChronoLock</p>
                     <div class="featured-image">
                         <img src="images/UNCERTAIN LOGO (50 x 50 px).png" class="img-fluid" style="width: 500px;">
                     </div>  
@@ -38,8 +38,8 @@
                 
                 <div class="col-md-6 right-box">
                     <div class="row align-items-center">
-                        <div class="header-text mb-4">
-                            <h2>Hello, User!</h2>
+                        <div class="header-text mb-4 text-center">
+                            <h2 style="font-weight: 600; font-size: 40px;">Hello, User!</h2>
                             <p>Please login your credentials.</p>
                         </div>
                         <div class="input-group mb-3">

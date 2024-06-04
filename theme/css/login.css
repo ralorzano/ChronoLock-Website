@@ -16,15 +16,29 @@
 body{
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(
-      135deg, /* Angle of the gradient */
+      180deg, /* Angle of the gradient */
       #04082ee8, 
+      /* #174699e8,  */
+      #1e3a8ae8,
       #174699e8, 
-      #1e3a8ae8, 
-      #174699e8, 
+      #1e3a8ae8,
       #04082ee8
     );
 }
 
+.animate-text {
+    animation: fadeInUp 2.5s ease-in-out;
+  }
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
 /*------------ Login container ------------*/
 
