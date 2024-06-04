@@ -80,7 +80,7 @@
           <!-- sidebar menu -->
           <ul class="nav sidebar-inner" id="sidebar-menu">
 
-            <li class="section-title">Overview</li>
+            <li class="section-title">Dashboard</li>
 
             <li class="active">
               <a class="sidenav-item-link" href="index.php">
@@ -96,10 +96,17 @@
               </a>
             </li>
 
+            <li>
+              <a class="sidenav-item-link" href="admin-user-management.php">
+                <i class="mdi mdi-account-circle"></i>
+                <span class="nav-text" data-toggle="tooltip" title="Pending RFID Request">Users</span>
+              </a>
+            </li>
+
             <!-- Horizontal line with custom class -->
             <hr class="my-2 custom-hr">
 
-            <li class="section-title">System Management</li>
+            <li class="section-title">Features</li>
 
 
             <li>

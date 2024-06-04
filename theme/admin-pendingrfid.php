@@ -17,11 +17,8 @@
   <title>ChronoLock Admin-Pending RFID</title>
 
   <!-- BOOTSTRAP 5.3.3 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 
   <!-- GOOGLE FONTS -->
@@ -59,7 +56,9 @@
 
 <body class="navbar-fixed sidebar-fixed" id="body">
   <script>
-    NProgress.configure({ showSpinner: false });
+    NProgress.configure({
+      showSpinner: false
+    });
     NProgress.start();
   </script>
 
@@ -84,7 +83,7 @@
           <!-- sidebar menu -->
           <ul class="nav sidebar-inner" id="sidebar-menu">
 
-            <li class="section-title">Overview</li>
+            <li class="section-title">Dashboard</li>
 
             <li>
               <a class="sidenav-item-link" href="index.php">
@@ -100,10 +99,17 @@
               </a>
             </li>
 
+            <li>
+              <a class="sidenav-item-link" href="admin-user-management.php">
+                <i class="mdi mdi-account-circle"></i>
+                <span class="nav-text" data-toggle="tooltip" title="Pending RFID Request">Users</span>
+              </a>
+            </li>
+
             <!-- Horizontal line with custom class -->
             <hr class="my-2 custom-hr">
 
-            <li class="section-title">System Management</li>
+            <li class="section-title">Features</li>
 
 
             <li>
@@ -114,8 +120,7 @@
             </li>
 
             <li class="has-sub">
-              <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#users"
-                aria-expanded="false" aria-controls="users">
+              <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#users" aria-expanded="false" aria-controls="users">
                 <i class="mdi mdi-book-open-page-variant"></i>
                 <span class="nav-text" data-toggle="tooltip" title="Attendance">Attendance</span> <b class="caret"></b>
               </a>
@@ -147,8 +152,7 @@
         <div class="sidebar-footer-content">
           <ul class="d-flex">
             <li>
-              <a href="user-account-settings.php" data-toggle="tooltip" title="Profile settings"><i
-                  class="mdi mdi-settings"></i></a>
+              <a href="user-account-settings.php" data-toggle="tooltip" title="Profile settings"><i class="mdi mdi-settings"></i></a>
             </li>
             <li>
               <a href="login.php" data-toggle="tooltip" title="Logout"><i class="mdi mdi-logout-variant"></i></a>
@@ -181,15 +185,15 @@
 
         <div class="row mt-4">
           <div class="col-xl-12 col-md-12 d-flex justify-content-end">
-              <!-- Sort button -->
-              <div class="dropdown d-inline-block mb-3 mr-3 border border-dark rounded-2">
-                  <button class="btn btn-primary fw-bold" type="button" data-toggle="modal" data-target="#modal-add-event">
-                      <i class=" mdi mdi-calendar-plus"></i>
-                      ADD RFID
-                  </button>
-              </div>
+            <!-- Sort button -->
+            <div class="dropdown d-inline-block mb-3 mr-3 border border-dark rounded-2">
+              <button class="btn btn-primary fw-bold" type="button" data-toggle="modal" data-target="#modal-add-event">
+                <i class=" mdi mdi-calendar-plus"></i>
+                ADD RFID
+              </button>
             </div>
-      </div>
+          </div>
+        </div>
 
         <div class="card card-default border border-dark">
           <div class="card-header">
@@ -213,17 +217,16 @@
                   <th>
                     <!-- Example single primary button -->
                     <div class="dropdown d-inline-block">
-                      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                         Options
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <button class="dropdown-item" data-toggle="modal" data-target="#exampleModalForm">
-                          <i class="mdi mdi-check"></i>
+                          <i class="mdi mdi-check text-info"></i>
                           Activate
                         </button>
                         <button class="dropdown-item">
-                          <i class="mdi mdi-close"></i>
+                          <i class="mdi mdi-close text-danger"></i>
                           Deactivate
                         </button>
                       </div>
@@ -244,8 +247,7 @@
   </div>
   </div>
 
-  <div class="modal fade" id="exampleModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalFormTitle"
-    aria-hidden="true">
+  <div class="modal fade" id="exampleModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalFormTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">

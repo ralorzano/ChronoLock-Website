@@ -14,11 +14,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>ChronoLock Admin-Instructor Attendance</title>
+  <title>ChronoLock Admin-Pending RFID</title>
 
   <!-- BOOTSTRAP 5.3.3 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 
   <!-- GOOGLE FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet" />
@@ -98,7 +99,7 @@
               </a>
             </li>
 
-            <li>
+            <li class="active">
               <a class="sidenav-item-link" href="admin-user-management.php">
                 <i class="mdi mdi-account-circle"></i>
                 <span class="nav-text" data-toggle="tooltip" title="Pending RFID Request">Users</span>
@@ -118,12 +119,12 @@
               </a>
             </li>
 
-            <li class="has-sub active">
+            <li class="has-sub">
               <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#users" aria-expanded="false" aria-controls="users">
                 <i class="mdi mdi-book-open-page-variant"></i>
                 <span class="nav-text" data-toggle="tooltip" title="Attendance">Attendance</span> <b class="caret"></b>
               </a>
-              <ul class="collapse show" id="users" data-parent="#sidebar-menu">
+              <ul class="collapse" id="users" data-parent="#sidebar-menu">
                 <div class="sub-menu">
                   <li>
                     <a href="admin-studattendance.php">Student Attendance</a>
@@ -162,7 +163,6 @@
   </div>
   </aside>
 
-
   <!-- ====================================
       ——— PAGE WRAPPER
       ===================================== -->
@@ -176,106 +176,73 @@
     <div class="content-wrapper">
       <div class="content">
 
-
-        <div class="d-flex justify-content-end"> <!-- Align content to the right -->
+        <div class="d-flex justify-content-end mb-3"> <!-- Align content to the right -->
           <!-- Live Date and Time -->
           <div>
             <p class="text-center display-4 date-time" id="liveDateTime">Your Date and Time</p>
           </div>
         </div>
 
-        <!-- DROPRDOWN NAV -->
-
         <div class="row mt-4">
-          <div class="col-xl-9 col-md-9">
-            <!-- Example single primary button -->
-            <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
-              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                <i class="mdi mdi-calendar"></i>
-                Date <!-- CALENDAR TYPE -->
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </div>
 
-            <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
-              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                <i class="mdi mdi-timer"></i>
-                Time
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </div>
 
-            <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
-              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                <i class="mdi mdi-account-arrow-right"></i>
-                Instructor Name
+          <div class="col-md-9 d-flex justify-content-start">
+            <div class="dropdown d-inline-block mb-3 mr-3 border border-dark rounded-2">
+              <button class="btn btn-primary fw-bold" type="button" data-toggle="modal" data-target="#modal-add-event">
+                <i class="mdi mdi-file-check"></i>
+                Import
               </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
             </div>
-
             <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
-              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                <i class="mdi mdi-account-card-details"></i>
-                Instructor ID
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+              <div class="custom-file rounded">
+                <input type="file" class="custom-file-input" accept=".xlsx, .xls" required>
+                <label class="custom-file-label" for="coverImage">Choose file...</label>
+                <div class="invalid-feedback">Example invalid custom file feedback</div>
               </div>
             </div>
           </div>
 
-
-          <div class="col-xl-3 col-md-3 d-flex justify-content-end">
-            <!-- Sort button -->
+          <div class="col-md-3 d-flex justify-content-end">
             <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
               <button class="btn btn-warning fw-bold" type="button">
-                <i class="mdi mdi-sort"></i>
-                SORT
+                <i class="mdi mdi-account-plus"></i>
+                Add New User
               </button>
             </div>
           </div>
-
         </div>
+
         <!-- END -->
 
 
-        <div class="card card-default border border-dark">
+
+
+
+        <div class="card card-default border border-dark mt-2">
           <div class="card-header">
-            <h2>Instructor Realtime Attendance</h2>
+            <h2 class="fs-3">User Management</h2>
           </div>
           <div class="card-body">
             <table class="table table-bordered table-hover">
               <thead class="thead-dark">
                 <tr class="text-center">
-                  <th scope="col">Date</th>
-                  <th scope="col">Time</th>
-                  <th scope="col">Instructor Name</th>
-                  <th scope="col">Instructor ID</th>
-                  <th scope="col">Status</th>
+                  <th scope="col">#</th>
+                  <th scope="col">ID</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Course</th>
+                  <th scope="col">Year & Section</th>
+                  <th scope="col">Gender</th>
                   <th scope="col">Actions</th>
                 </tr>
               </thead>
               <tbody>
                 <tr class="text-center">
-                  <td scope="row">June 3, 2024</td>
-                  <td scope="row">11:35 a.m.</td>
-                  <td scope="row">Lorzano, Ralph H.</td>
+                  <th scope="col">1</th>
                   <td scope="row">C21104744</td>
-                  <td scope="row" class="text-success fw-bolder">Present</td>
+                  <td scope="row">Lorzano, Ralph H.</td>
+                  <td scope="row">BSIS</td>
+                  <td scope="row">1A</td>
+                  <td scope="row">Male</td>
                   <th>
                     <!-- Example single primary button -->
                     <div class="dropdown d-inline-block">
@@ -285,9 +252,36 @@
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <button class="dropdown-item">
                           <i class="mdi mdi-circle-edit-outline text-warning"></i>
-                          Edit</button>
+                          Edit
+                        </button>
                         <button class="dropdown-item">
                           <i class="mdi mdi-trash-can text-danger"></i>
+                          Delete
+                        </button>
+                      </div>
+                    </div>
+                  </th>
+                </tr>
+
+                <tr class="text-center">
+                  <th scope="col">2</th>
+                  <td scope="row">C21122234</td>
+                  <td scope="row">Nacario, Jomarc I.</td>
+                  <td scope="row">BSIS</td>
+                  <td scope="row">1A</td>
+                  <td scope="row">Male</td>
+                  <th>
+                    <!-- Example single primary button -->
+                    <div class="dropdown d-inline-block">
+                      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                        Actions
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <button class="dropdown-item">
+                          <i class="mdi mdi-circle-edit-outline"></i>
+                          Edit</button>
+                        <button class="dropdown-item">
+                          <i class="mdi mdi-trash-can"></i>
                           Delete</button>
                       </div>
                     </div>
@@ -296,39 +290,13 @@
               </tbody>
             </table>
           </div>
-
-
         </div>
+
+
+
+
       </div>
     </div>
-  </div>
-
-
-  </div>
-  </div>
-
-
-
-  <!-- Footer -->
-  <!-- <footer class="footer mt-auto">
-          <div class="copyright bg-white">
-            <p>
-              &copy; <span id="copy-year"></span> Copyright Mono Dashboard
-              Bootstrap Template by
-              <a
-                class="text-primary"
-                href="http://www.iamabdus.com/"
-                target="_blank"
-                >Abdus</a
-              >.
-            </p>
-          </div>
-          <script>
-            var d = new Date();
-            var year = d.getFullYear();
-            document.getElementById("copy-year").innerHTML = year;
-          </script>
-        </footer> -->
   </div>
   </div>
 

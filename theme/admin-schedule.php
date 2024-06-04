@@ -55,7 +55,9 @@
 
 <body class="navbar-fixed sidebar-fixed" id="body">
   <script>
-    NProgress.configure({ showSpinner: false });
+    NProgress.configure({
+      showSpinner: false
+    });
     NProgress.start();
   </script>
 
@@ -80,7 +82,7 @@
           <!-- sidebar menu -->
           <ul class="nav sidebar-inner" id="sidebar-menu">
 
-            <li class="section-title">Overview</li>
+            <li class="section-title">Dashboard</li>
 
             <li>
               <a class="sidenav-item-link" href="index.php">
@@ -96,10 +98,17 @@
               </a>
             </li>
 
+            <li>
+              <a class="sidenav-item-link" href="admin-user-management.php">
+                <i class="mdi mdi-account-circle"></i>
+                <span class="nav-text" data-toggle="tooltip" title="Pending RFID Request">Users</span>
+              </a>
+            </li>
+
             <!-- Horizontal line with custom class -->
             <hr class="my-2 custom-hr">
 
-            <li class="section-title">System Management</li>
+            <li class="section-title">Features</li>
 
 
             <li class="active">
@@ -110,121 +119,102 @@
             </li>
 
             <li class="has-sub">
-              <a
-                class="sidenav-item-link"
-                href="javascript:void(0)"
-                data-toggle="collapse"
-                data-target="#users"
-                aria-expanded="false"
-                aria-controls="users"
-              >
+              <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#users" aria-expanded="false" aria-controls="users">
                 <i class="mdi mdi-book-open-page-variant"></i>
                 <span class="nav-text" data-toggle="tooltip" title="Attendance">Attendance</span> <b class="caret"></b>
               </a>
               <ul class="collapse" id="users" data-parent="#sidebar-menu">
                 <div class="sub-menu">
-                    <li>
-                      <a href="admin-studattendance.php">Student Attendance</a>
-                    </li>
-
-                    <li>
-                      <a href="admin-instattendance.php">Instructor Attendance</a>
-                    </li>
+                  <li>
+                    <a href="admin-studattendance.php">Student Attendance</a>
                   </li>
-                </div>
-              </ul>
-            </li>
 
+                  <li>
+                    <a href="admin-instattendance.php">Instructor Attendance</a>
+                  </li>
+            </li>
+        </div>
+        </ul>
+        </li>
+
+        <li>
+          <a class="sidenav-item-link" href="admin-rfidaccount.php">
+            <i class="mdi mdi-radio-tower"></i>
+            <span class="nav-text" data-toggle="tooltip" title="RFID Accounts">RFID Accounts</span>
+          </a>
+        </li>
+
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-footer-content">
+          <ul class="d-flex">
             <li>
-              <a class="sidenav-item-link" href="admin-rfidaccount.php">
-                <i class="mdi mdi-radio-tower"></i>
-                <span class="nav-text" data-toggle="tooltip" title="RFID Accounts">RFID Accounts</span>
-              </a>
+              <a href="user-account-settings.php" data-toggle="tooltip" title="Profile settings"><i class="mdi mdi-settings"></i></a>
             </li>
-
+            <li>
+              <a href="login.php" data-toggle="tooltip" title="Logout"><i class="mdi mdi-logout-variant"></i></a>
+            </li>
           </ul>
         </div>
-
-        <div class="sidebar-footer">
-          <div class="sidebar-footer-content">
-            <ul class="d-flex">
-              <li>
-                <a href="user-account-settings.php" data-toggle="tooltip" title="Profile settings"><i
-                    class="mdi mdi-settings"></i></a>
-              </li>
-              <li>
-                <a href="login.php" data-toggle="tooltip" title="Logout"><i class="mdi mdi-logout-variant"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
-    </aside>
+  </div>
+  </aside>
 
-    <!-- ====================================
+  <!-- ====================================
       ——— PAGE WRAPPER
       ===================================== -->
-    <div class="page-wrapper">
-      <!-- Header -->
-      <?php include 'header.php' ?>
+  <div class="page-wrapper">
+    <!-- Header -->
+    <?php include 'header.php' ?>
 
-      <!-- ====================================
+    <!-- ====================================
         ——— CONTENT WRAPPER
         ===================================== -->
-      <div class="content-wrapper">
-        <div class="content">
+    <div class="content-wrapper">
+      <div class="content">
 
-          <!-- Live Date & Time
-            <div class="card card-default">
-            <div class="px-6 py-4">
-              <div class="row">
-                <div class="col-12">
-                  <p class="text-center display-4 date-time" id="liveDateTime"></p>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
-          <div class="d-flex justify-content-end mb-3"> <!-- Align content to the right -->
-            <!-- Live Date and Time -->
-            <div>
-                <p class="text-center display-4 date-time" id="liveDateTime">Your Date and Time</p>
-            </div>
+        <div class="d-flex justify-content-end mb-3"> <!-- Align content to the right -->
+          <!-- Live Date and Time -->
+          <div>
+            <p class="text-center display-4 date-time" id="liveDateTime">Your Date and Time</p>
+          </div>
         </div>
 
         <div class="row mt-4">
-            <div class="col-xl-12 col-md-12 d-flex justify-content-end">
-                <!-- Sort button -->
-                <div class="dropdown d-inline-block mb-3 mr-3 border border-dark rounded-2">
-                    <button class="btn btn-primary fw-bold" type="button" data-toggle="modal" data-target="#modal-add-event">
-                        <i class=" mdi mdi-calendar-plus"></i>
-                        ADD SCHEDULE
-                    </button>
-                </div>
-                <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
-                    <button class="btn btn-warning fw-bold" type="button">
-                        <i class="mdi mdi-cloud-print-outline"></i>
-                        PRINT
-                    </button>
-                </div>
-              </div>
+          <div class="col-xl-12 col-md-12 d-flex justify-content-end">
+            <!-- Sort button -->
+            <div class="dropdown d-inline-block mb-3 mr-3 border border-dark rounded-2">
+              <button class="btn btn-primary fw-bold" type="button" data-toggle="modal" data-target="#modal-add-event">
+                <i class=" mdi mdi-calendar-plus"></i>
+                ADD SCHEDULE
+              </button>
+            </div>
+            <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
+              <button class="btn btn-warning fw-bold" type="button">
+                <i class="mdi mdi-cloud-print-outline"></i>
+                PRINT
+              </button>
+            </div>
+          </div>
         </div>
 
 
         <div class="card card-default border border-dark">
-            <div class="card-header card-header-border-bottom d-flex justify-content-between align-items-center">
-              <h2>Schedule</h2>
-              <div class="card-body">
-                <div class=" full-calendar mb-5">
-                  <div id="calendar"></div>
-                </div>
+          <div class="card-header card-header-border-bottom d-flex justify-content-between align-items-center">
+            <h2>Schedule</h2>
+            <div class="card-body">
+              <div class=" full-calendar mb-5">
+                <div id="calendar"></div>
               </div>
             </div>
+          </div>
         </div>
 
-        </div>
       </div>
     </div>
+  </div>
   </div>
 
 
@@ -233,72 +223,71 @@
 
 
   <!-- Add Event Button  -->
-  <div class="modal fade" id="modal-add-event" tabindex="-1" role="dialog"
-  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <form>
-        <div class="modal-header px-4">
-          <h5 class="modal-title" id="exampleModalCenterTitle">
-            Add New Event
-          </h5>
+  <div class="modal fade" id="modal-add-event" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <form>
+          <div class="modal-header px-4">
+            <h5 class="modal-title" id="exampleModalCenterTitle">
+              Add New Event
+            </h5>
 
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-
-        <div class="modal-body px-4">
-          <div class="form-group">
-            <label for="firstName">Title</label>
-            <input type="text" class="form-control" value="Meeting" />
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
 
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="form-group">
-                <label for="firstName">Date</label>
-                <div class="input-group mb-2">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text py-1">
-                      <i class="mdi mdi-calendar-range"></i>
-                    </span>
+          <div class="modal-body px-4">
+            <div class="form-group">
+              <label for="firstName">Title</label>
+              <input type="text" class="form-control" value="Meeting" />
+            </div>
+
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label for="firstName">Date</label>
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text py-1">
+                        <i class="mdi mdi-calendar-range"></i>
+                      </span>
+                    </div>
+                    <input type="text" class="form-control" name="dateRange" value="" placeholder="Date" />
                   </div>
-                  <input type="text" class="form-control" name="dateRange" value="" placeholder="Date" />
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label for="exampleFormControlSelect3">Time</label>
+                  <select class="form-control" id="exampleFormControlSelect3">
+                    <option>10:00am</option>
+                    <option>10:30am</option>
+                    <option>11am</option>
+                    <option>11:30am</option>
+                    <option>12:00pm</option>
+                  </select>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-6">
-              <div class="form-group">
-                <label for="exampleFormControlSelect3">Time</label>
-                <select class="form-control" id="exampleFormControlSelect3">
-                  <option>10:00am</option>
-                  <option>10:30am</option>
-                  <option>11am</option>
-                  <option>11:30am</option>
-                  <option>12:00pm</option>
-                </select>
-              </div>
+            <div class="form-group mb-0">
+              <label for="firstName">Description</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
             </div>
-            </div>
-
-          <div class="form-group mb-0">
-            <label for="firstName">Description</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
           </div>
-        </div>
 
-        <div class="modal-footer">
+          <div class="modal-footer">
             <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary btn-pill">Save Changes</button>
           </div>
-      </form>
+        </form>
+      </div>
     </div>
   </div>
-</div>
-</div>
-</div>
+  </div>
+  </div>
 
   <!-- Footer -->
   <!-- <footer class="footer mt-auto">

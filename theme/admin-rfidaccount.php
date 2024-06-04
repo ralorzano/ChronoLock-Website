@@ -51,7 +51,9 @@
 
 <body class="navbar-fixed sidebar-fixed" id="body">
   <script>
-    NProgress.configure({ showSpinner: false });
+    NProgress.configure({
+      showSpinner: false
+    });
     NProgress.start();
   </script>
 
@@ -62,169 +64,167 @@
     <!-- ====================================
           ——— LEFT SIDEBAR WITH OUT FOOTER
         ===================================== -->
-        <aside class="left-sidebar sidebar-dark" id="left-sidebar">
-          <div id="sidebar" class="sidebar sidebar-with-footer">
-            <!-- Aplication Brand -->
-            <div class="app-brand">
-              <a href="index.php">
-                <img src="images/logo.png" alt="Mono" />
-                <span class="brand-name">ChronoLock</span>
-              </a>
-            </div>
-            <!-- begin sidebar scrollbar -->
-            <div class="sidebar-left" data-simplebar style="height: 100%">
-              <!-- sidebar menu -->
-              <ul class="nav sidebar-inner" id="sidebar-menu">
-    
-                <li class="section-title">Overview</li>
-    
-                <li>
-                  <a class="sidenav-item-link" href="index.php">
-                    <i class="mdi mdi-disqus-outline"></i>
-                    <span class="nav-text" data-toggle="tooltip" title="Admin Dashboard">Admin Dashboard</span>
-                  </a>
-                </li>
-    
-                <li>
-                  <a class="sidenav-item-link" href="admin-pendingrfid.php">
-                    <i class="mdi mdi-folder-clock-outline"></i>
-                    <span class="nav-text" data-toggle="tooltip" title="Pending RFID Request">Pending RFID Request</span>
-                  </a>
-                </li>
-    
-                <!-- Horizontal line with custom class -->
-                <hr class="my-2 custom-hr">
-    
-                <li class="section-title">System Management</li>
-    
-    
-                <li>
-                  <a class="sidenav-item-link" href="admin-schedule.php">
-                    <i class="mdi mdi-calendar-today "></i>
-                    <span class="nav-text" data-toggle="tooltip" title="Schedule">Schedule</span>
-                  </a>
-                </li>
-    
-                <li class="has-sub">
-                  <a
-                    class="sidenav-item-link"
-                    href="javascript:void(0)"
-                    data-toggle="collapse"
-                    data-target="#users"
-                    aria-expanded="false"
-                    aria-controls="users"
-                  >
-                    <i class="mdi mdi-book-open-page-variant"></i>
-                    <span class="nav-text" data-toggle="tooltip" title="Attendance">Attendance</span> <b class="caret"></b>
-                  </a>
-                  <ul class="collapse" id="users" data-parent="#sidebar-menu">
-                    <div class="sub-menu">
-                        <li>
-                          <a href="admin-studattendance.php">Student Attendance</a>
-                        </li>
-    
-                        <li>
-                          <a href="admin-instattendance.php">Instructor Attendance</a>
-                        </li>
-                      </li>
-                    </div>
-                  </ul>
-                </li>
-    
-                <li class="active">
-                  <a class="sidenav-item-link" href="">
-                    <i class="mdi mdi-radio-tower"></i>
-                    <span class="nav-text" data-toggle="tooltip" title="RFID Accounts">RFID Accounts</span>
-                  </a>
-                </li>
-    
-              </ul>
-            </div>
-    
-            <div class="sidebar-footer">
-              <div class="sidebar-footer-content">
-                <ul class="d-flex">
-                  <li>
-                    <a href="user-account-settings.php" data-toggle="tooltip" title="Profile settings"><i
-                        class="mdi mdi-settings"></i></a>
-                  </li>
-                  <li>
-                    <a href="login.php" data-toggle="tooltip" title="Logout"><i class="mdi mdi-logout-variant"></i></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </aside>
+    <aside class="left-sidebar sidebar-dark" id="left-sidebar">
+      <div id="sidebar" class="sidebar sidebar-with-footer">
+        <!-- Aplication Brand -->
+        <div class="app-brand">
+          <a href="index.php">
+            <img src="images/logo.png" alt="Mono" />
+            <span class="brand-name">ChronoLock</span>
+          </a>
+        </div>
+        <!-- begin sidebar scrollbar -->
+        <div class="sidebar-left" data-simplebar style="height: 100%">
+          <!-- sidebar menu -->
+          <ul class="nav sidebar-inner" id="sidebar-menu">
 
-    <!-- ====================================
+            <li class="section-title">Dashboard</li>
+
+            <li>
+              <a class="sidenav-item-link" href="index.php">
+                <i class="mdi mdi-disqus-outline"></i>
+                <span class="nav-text" data-toggle="tooltip" title="Admin Dashboard">Admin Dashboard</span>
+              </a>
+            </li>
+
+            <li>
+              <a class="sidenav-item-link" href="admin-pendingrfid.php">
+                <i class="mdi mdi-folder-clock-outline"></i>
+                <span class="nav-text" data-toggle="tooltip" title="Pending RFID Request">Pending RFID Request</span>
+              </a>
+            </li>
+
+            <li>
+              <a class="sidenav-item-link" href="admin-user-management.php">
+                <i class="mdi mdi-account-circle"></i>
+                <span class="nav-text" data-toggle="tooltip" title="Pending RFID Request">Users</span>
+              </a>
+            </li>
+
+            <!-- Horizontal line with custom class -->
+            <hr class="my-2 custom-hr">
+
+            <li class="section-title">Features</li>
+
+
+            <li>
+              <a class="sidenav-item-link" href="admin-schedule.php">
+                <i class="mdi mdi-calendar-today "></i>
+                <span class="nav-text" data-toggle="tooltip" title="Schedule">Schedule</span>
+              </a>
+            </li>
+
+            <li class="has-sub">
+              <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#users" aria-expanded="false" aria-controls="users">
+                <i class="mdi mdi-book-open-page-variant"></i>
+                <span class="nav-text" data-toggle="tooltip" title="Attendance">Attendance</span> <b class="caret"></b>
+              </a>
+              <ul class="collapse" id="users" data-parent="#sidebar-menu">
+                <div class="sub-menu">
+                  <li>
+                    <a href="admin-studattendance.php">Student Attendance</a>
+                  </li>
+
+                  <li>
+                    <a href="admin-instattendance.php">Instructor Attendance</a>
+                  </li>
+            </li>
+        </div>
+        </ul>
+        </li>
+
+        <li class="active">
+          <a class="sidenav-item-link" href="admin-rfidaccount.php">
+            <i class="mdi mdi-radio-tower"></i>
+            <span class="nav-text" data-toggle="tooltip" title="RFID Accounts">RFID Accounts</span>
+          </a>
+        </li>
+
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-footer-content">
+          <ul class="d-flex">
+            <li>
+              <a href="user-account-settings.php" data-toggle="tooltip" title="Profile settings"><i class="mdi mdi-settings"></i></a>
+            </li>
+            <li>
+              <a href="login.php" data-toggle="tooltip" title="Logout"><i class="mdi mdi-logout-variant"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </div>
+  </aside>
+
+  <!-- ====================================
       ——— PAGE WRAPPER
       ===================================== -->
-    <div class="page-wrapper">
-      <!-- Header -->
-      <?php include 'header.php' ?>
+  <div class="page-wrapper">
+    <!-- Header -->
+    <?php include 'header.php' ?>
 
-      <!-- ====================================
+    <!-- ====================================
         ——— CONTENT WRAPPER
         ===================================== -->
-      <div class="content-wrapper">
-        <div class="content">
-          <div class="d-flex justify-content-end mb-3"> <!-- Align content to the right -->
-            <!-- Live Date and Time -->
-            <div>
-                <p class="text-center display-4 date-time" id="liveDateTime">Your Date and Time</p>
-            </div>
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="d-flex justify-content-end mb-3"> <!-- Align content to the right -->
+          <!-- Live Date and Time -->
+          <div>
+            <p class="text-center display-4 date-time" id="liveDateTime">Your Date and Time</p>
           </div>
+        </div>
 
-            <div class="card card-default border border-dark">
-                <div class="card-header">
-                  <h2>RFID Registered Accounts</h2>
-                </div>
-                <div class="card-body">
-                  <table class="table table-bordered table-hover">
-                    <thead class="thead-dark">
-                      <tr class="text-center">
-                        <th scope="col">#</th>
-                        <th scope="col">RFID Code</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Age</th>
-                        <th scope="col">Gender</th>    
-                        <th scope="col">User Type</th>                  
-                        <th scope="col">Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr class="text-center">
-                        <td scope="row">1</td>
-                        <td>210102192301923</td>
-                        <td>Lorzano, Ralph H.</td>
-                        <td>22</td>
-                        <td>Male</td>
-                        <td>Student</td>
-                        <th>
-                            <!-- Example single primary button -->
-                            <div class="dropdown d-inline-block">
-                                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false" data-display="static">
-                                Actions
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <button class="dropdown-item">
-                                      <i class="mdi mdi-close"></i> 
-                                      Deactivate</button>
-                                    <button class="dropdown-item">
-                                      <i class="mdi mdi-trash-can"></i> 
-                                      Delete</button>
-                                    <button class="dropdown-item">
-                                      <i class="mdi mdi-card-bulleted-off"></i> 
-                                      Blacklist</button>
-                                </div>
-                            </div>
-                        </th>
-                      </tr>   
-                    </tbody>
-                  </table>
-                </div>
+        <div class="card card-default border border-dark">
+          <div class="card-header">
+            <h2>RFID Registered Accounts</h2>
+          </div>
+          <div class="card-body">
+            <table class="table table-bordered table-hover">
+              <thead class="thead-dark">
+                <tr class="text-center">
+                  <th scope="col">#</th>
+                  <th scope="col">RFID Code</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Age</th>
+                  <th scope="col">Gender</th>
+                  <th scope="col">User Type</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="text-center">
+                  <td scope="row">1</td>
+                  <td>210102192301923</td>
+                  <td>Lorzano, Ralph H.</td>
+                  <td>22</td>
+                  <td>Male</td>
+                  <td>Student</td>
+                  <th>
+                    <!-- Example single primary button -->
+                    <div class="dropdown d-inline-block">
+                      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                        Actions
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <button class="dropdown-item">
+                          <i class="mdi mdi-close"></i>
+                          Deactivate</button>
+                        <button class="dropdown-item">
+                          <i class="mdi mdi-trash-can"></i>
+                          Delete</button>
+                        <button class="dropdown-item">
+                          <i class="mdi mdi-card-bulleted-off"></i>
+                          Blacklist</button>
+                      </div>
+                    </div>
+                  </th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
 
         </div>

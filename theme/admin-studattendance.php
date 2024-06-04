@@ -17,11 +17,8 @@
   <title>ChronoLock Admin-Student Attendance</title>
 
   <!-- BOOTSTRAP 5.3.3 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
   <!-- GOOGLE FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet" />
@@ -58,7 +55,9 @@
 
 <body class="navbar-fixed sidebar-fixed" id="body">
   <script>
-    NProgress.configure({ showSpinner: false });
+    NProgress.configure({
+      showSpinner: false
+    });
     NProgress.start();
   </script>
 
@@ -83,7 +82,7 @@
           <!-- sidebar menu -->
           <ul class="nav sidebar-inner" id="sidebar-menu">
 
-            <li class="section-title">Overview</li>
+            <li class="section-title">Dashboard</li>
 
             <li>
               <a class="sidenav-item-link" href="index.php">
@@ -99,10 +98,17 @@
               </a>
             </li>
 
+            <li>
+              <a class="sidenav-item-link" href="admin-user-management.php">
+                <i class="mdi mdi-account-circle"></i>
+                <span class="nav-text" data-toggle="tooltip" title="Pending RFID Request">Users</span>
+              </a>
+            </li>
+
             <!-- Horizontal line with custom class -->
             <hr class="my-2 custom-hr">
 
-            <li class="section-title">System Management</li>
+            <li class="section-title">Features</li>
 
 
             <li>
@@ -112,218 +118,207 @@
               </a>
             </li>
 
-            <li class="has-sub active expand">
-              <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#ui-elements"
-                aria-expanded="false" aria-controls="ui-elements">
-                <i class="mdi mdi-folder-outline"></i>
-                <span class="nav-text">Attendance</span> <b class="caret"></b>
+            <li class="has-sub active">
+              <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#users" aria-expanded="false" aria-controls="users">
+                <i class="mdi mdi-book-open-page-variant"></i>
+                <span class="nav-text" data-toggle="tooltip" title="Attendance">Attendance</span> <b class="caret"></b>
               </a>
-              <ul class="collapse show" id="ui-elements" data-parent="#sidebar-menu">
+              <ul class="collapse show" id="users" data-parent="#sidebar-menu">
                 <div class="sub-menu">
-
-                  <li class="active">
-                    <a class="sidenav-item-link" href="admin-studattendance.php">
-                      <span class="nav-text">Student Attendance</span>
-                    </a>
+                  <li>
+                    <a href="admin-studattendance.php">Student Attendance</a>
                   </li>
 
                   <li>
-                    <a class="sidenav-item-link" href="admin-instattendance.php">
-                      <span class="nav-text">Instructor Attendance</span>
-                    </a>
+                    <a href="admin-instattendance.php">Instructor Attendance</a>
                   </li>
-              </ul>
             </li>
+        </div>
+        </ul>
+        </li>
 
+        <li>
+          <a class="sidenav-item-link" href="admin-rfidaccount.php">
+            <i class="mdi mdi-radio-tower"></i>
+            <span class="nav-text" data-toggle="tooltip" title="RFID Accounts">RFID Accounts</span>
+          </a>
+        </li>
+
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-footer-content">
+          <ul class="d-flex">
             <li>
-              <a class="sidenav-item-link" href="admin-rfidaccount.php">
-                <i class="mdi mdi-radio-tower"></i>
-                <span class="nav-text" data-toggle="tooltip" title="RFID Accounts">RFID Accounts</span>
-              </a>
+              <a href="user-account-settings.php" data-toggle="tooltip" title="Profile settings"><i class="mdi mdi-settings"></i></a>
             </li>
-
+            <li>
+              <a href="login.php" data-toggle="tooltip" title="Logout"><i class="mdi mdi-logout-variant"></i></a>
+            </li>
           </ul>
         </div>
-
-        <div class="sidebar-footer">
-          <div class="sidebar-footer-content">
-            <ul class="d-flex">
-              <li>
-                <a href="user-account-settings.php" data-toggle="tooltip" title="Profile settings"><i
-                    class="mdi mdi-settings"></i></a>
-              </li>
-              <li>
-                <a href="login.php" data-toggle="tooltip" title="Logout"><i class="mdi mdi-logout-variant"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
-    </aside>
+  </div>
+  </aside>
 
-    <!-- ====================================
+  <!-- ====================================
       ——— PAGE WRAPPER
       ===================================== -->
-    <div class="page-wrapper">
-      <!-- Header -->
-      <?php include 'header.php' ?>
+  <div class="page-wrapper">
+    <!-- Header -->
+    <?php include 'header.php' ?>
 
-      <!-- ====================================
+    <!-- ====================================
         ——— CONTENT WRAPPER
         ===================================== -->
-      <div class="content-wrapper">
-        <div class="content">
+    <div class="content-wrapper">
+      <div class="content">
 
 
-          <div class="d-flex justify-content-end"> <!-- Align content to the right -->
-            <!-- Live Date and Time -->
-            <div>
-              <p class="text-center display-4 date-time" id="liveDateTime">Your Date and Time</p>
+        <div class="d-flex justify-content-end"> <!-- Align content to the right -->
+          <!-- Live Date and Time -->
+          <div>
+            <p class="text-center display-4 date-time" id="liveDateTime">Your Date and Time</p>
+          </div>
+        </div>
+
+        <!-- DROPRDOWN NAV -->
+
+        <div class="row mt-4">
+          <div class="col-xl-9 col-md-9">
+            <!-- Example single primary button -->
+            <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
+              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                <i class="mdi mdi-calendar"></i>
+                Date <!-- CALENDAR TYPE -->
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+
+            <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
+              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                <i class="mdi mdi-timer"></i>
+                Time
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+
+            <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
+              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                <i class="mdi mdi-timetable"></i>
+                Year
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+
+            <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
+              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                <i class="mdi mdi-alpha-s-box"></i>
+                Section
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+
+            <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
+              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                <i class="mdi mdi-alpha-c-box"></i>
+                Course
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
             </div>
           </div>
 
-          <!-- DROPRDOWN NAV -->
-
-          <div class="row mt-4">
-            <div class="col-xl-9 col-md-9">
-              <!-- Example single primary button -->
-              <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                  <i class="mdi mdi-calendar"></i>
-                  Date <!-- CALENDAR TYPE -->
-                </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
-              </div>
-
-              <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                  <i class="mdi mdi-timer"></i>
-                  Time
-                </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
-              </div>
-
-              <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                  <i class="mdi mdi-timetable"></i>
-                  Year
-                </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
-              </div>
-
-              <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                  <i class="mdi mdi-alpha-s-box"></i>
-                  Section
-                </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
-              </div>
-
-              <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                  <i class="mdi mdi-alpha-c-box"></i>
-                  Course
-                </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
-              </div>
+          <div class="col-xl-3 col-md-3 d-flex justify-content-end">
+            <!-- Sort button -->
+            <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
+              <button class="btn btn-warning fw-bold" type="button">
+                <i class="mdi mdi-sort"></i>
+                SORT
+              </button>
             </div>
-
-              <div class="col-xl-3 col-md-3 d-flex justify-content-end">
-                <!-- Sort button -->
-                <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
-                    <button class="btn btn-warning fw-bold" type="button">
-                      <i class="mdi mdi-sort"></i>
-                        SORT
-                    </button>
-                </div>
-              </div>
-      
           </div>
-          <!-- END -->
+
+        </div>
+        <!-- END -->
 
 
 
-          <div class="card card-default border border-dark">
-            <div class="card-header">
-              <h2>Student Realtime Attendance</h2>
-            </div>
-            <div class="card-body">
-              <table class="table table-bordered table-hover">
-                <thead class="thead-dark">
-                  <tr class="text-center">
-                    <th scope="col">Date</th>
-                    <th scope="col">Time</th>
-                    <th scope="col">Student Name</th>
-                    <th scope="col">Student ID</th>
-                    <th scope="col">Year</th>
-                    <th scope="col">Section</th>
-                    <th scope="col">Course</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="text-center">
-                    <td scope="row">June 3, 2024</td>
-                    <td scope="row">11:35 a.m.</td>
-                    <td scope="row">Lorzano, Ralph H.</td>
-                    <td scope="row">C21104744</td>
-                    <td scope="row">3</td>
-                    <td scope="row">F</td>
-                    <td scope="row">BSIS</td>
-                    <td scope="row" class="text-success fw-bolder">Present</td>
-                    <th>
-                      <!-- Example single primary button -->
-                      <div class="dropdown d-inline-block">
-                          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                          aria-haspopup="true" aria-expanded="false" data-display="static">
-                          Actions
-                          </button>
-                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <button class="dropdown-item">
-                                <i class="mdi mdi-circle-edit-outline"></i> 
-                                Edit</button>
-                              <button class="dropdown-item">
-                                <i class="mdi mdi-trash-can"></i> 
-                                Delete</button>
-                          </div>
+        <div class="card card-default border border-dark">
+          <div class="card-header">
+            <h2>Student Realtime Attendance</h2>
+          </div>
+          <div class="card-body">
+            <table class="table table-bordered table-hover">
+              <thead class="thead-dark">
+                <tr class="text-center">
+                  <th scope="col">Date</th>
+                  <th scope="col">Time</th>
+                  <th scope="col">Student Name</th>
+                  <th scope="col">Student ID</th>
+                  <th scope="col">Year</th>
+                  <th scope="col">Section</th>
+                  <th scope="col">Course</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="text-center">
+                  <td scope="row">June 3, 2024</td>
+                  <td scope="row">11:35 a.m.</td>
+                  <td scope="row">Lorzano, Ralph H.</td>
+                  <td scope="row">C21104744</td>
+                  <td scope="row">3</td>
+                  <td scope="row">F</td>
+                  <td scope="row">BSIS</td>
+                  <td scope="row" class="text-success fw-bolder">Present</td>
+                  <th>
+                    <!-- Example single primary button -->
+                    <div class="dropdown d-inline-block">
+                      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                        Actions
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <button class="dropdown-item">
+                          <i class="mdi mdi-circle-edit-outline text-warning"></i>
+                          Edit</button>
+                        <button class="dropdown-item">
+                          <i class="mdi mdi-trash-can text-danger"></i>
+                          Delete</button>
                       </div>
-                    </th>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-
+                    </div>
+                  </th>
+                </tr>
+              </tbody>
+            </table>
           </div>
+
+
         </div>
       </div>
     </div>
+  </div>
 
 
   </div>
@@ -354,4 +349,4 @@
   </div>
   </div>
 
-   <?php include 'footer.php' ?>
+  <?php include 'footer.php' ?>
