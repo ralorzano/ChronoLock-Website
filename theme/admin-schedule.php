@@ -90,7 +90,7 @@
             </li>
 
             <li>
-              <a class="sidenav-item-link" href="pendingrfid.php">
+              <a class="sidenav-item-link" href="admin-pendingrfid.php">
                 <i class="mdi mdi-folder-clock-outline"></i>
                 <span class="nav-text" data-toggle="tooltip" title="Pending RFID Request">Pending RFID Request</span>
               </a>
@@ -103,7 +103,7 @@
 
 
             <li class="active">
-              <a class="sidenav-item-link" href="schedule.php">
+              <a class="sidenav-item-link" href="admin-schedule.php">
                 <i class="mdi mdi-calendar-today "></i>
                 <span class="nav-text" data-toggle="tooltip" title="Schedule">Schedule</span>
               </a>
@@ -124,11 +124,11 @@
               <ul class="collapse" id="users" data-parent="#sidebar-menu">
                 <div class="sub-menu">
                     <li>
-                      <a href="studattendance.php">Student Attendance</a>
+                      <a href="admin-studattendance.php">Student Attendance</a>
                     </li>
 
                     <li>
-                      <a href="instattendance.php">Instructor Attendance</a>
+                      <a href="admin-instattendance.php">Instructor Attendance</a>
                     </li>
                   </li>
                 </div>
@@ -136,7 +136,7 @@
             </li>
 
             <li>
-              <a class="sidenav-item-link" href="rfidaccount.php">
+              <a class="sidenav-item-link" href="admin-rfidaccount.php">
                 <i class="mdi mdi-radio-tower"></i>
                 <span class="nav-text" data-toggle="tooltip" title="RFID Accounts">RFID Accounts</span>
               </a>
