@@ -1,3 +1,104 @@
+<!-- Card Offcanvas -->
+<div class="card card-offcanvas" id="contact-off">
+        <div class="card-header">
+            <h2>Contacts</h2>
+            <a href="#" class="btn btn-primary btn-pill px-4">Add New</a>
+        </div>
+        <div class="card-body">
+            <div class="mb-4">
+                <input type="text" class="form-control form-control-lg form-control-secondary rounded-0" placeholder="Search contacts..." />
+            </div>
+
+            <div class="media media-sm">
+                <div class="media-sm-wrapper">
+                    <a href="user-profile.php">
+                        <img src="images/user/user-sm-01.jpg" alt="User Image" />
+                        <span class="active bg-primary"></span>
+                    </a>
+                </div>
+                <div class="media-body">
+                    <a href="user-profile.php">
+                        <span class="title">Selena Wagner</span>
+                        <span class="discribe">Designer</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="media media-sm">
+                <div class="media-sm-wrapper">
+                    <a href="user-profile.php">
+                        <img src="images/user/user-sm-02.jpg" alt="User Image" />
+                        <span class="active bg-primary"></span>
+                    </a>
+                </div>
+                <div class="media-body">
+                    <a href="user-profile.php">
+                        <span class="title">Walter Reuter</span>
+                        <span>Developer</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="media media-sm">
+                <div class="media-sm-wrapper">
+                    <a href="user-profile.php">
+                        <img src="images/user/user-sm-03.jpg" alt="User Image" />
+                    </a>
+                </div>
+                <div class="media-body">
+                    <a href="user-profile.php">
+                        <span class="title">Larissa Gebhardt</span>
+                        <span>Cyber Punk</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="media media-sm">
+                <div class="media-sm-wrapper">
+                    <a href="user-profile.php">
+                        <img src="images/user/user-sm-04.jpg" alt="User Image" />
+                    </a>
+                </div>
+                <div class="media-body">
+                    <a href="user-profile.php">
+                        <span class="title">Albrecht Straub</span>
+                        <span>Photographer</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="media media-sm">
+                <div class="media-sm-wrapper">
+                    <a href="user-profile.php">
+                        <img src="images/user/user-sm-05.jpg" alt="User Image" />
+                        <span class="active bg-danger"></span>
+                    </a>
+                </div>
+                <div class="media-body">
+                    <a href="user-profile.php">
+                        <span class="title">Leopold Ebert</span>
+                        <span>Fashion Designer</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="media media-sm">
+                <div class="media-sm-wrapper">
+                    <a href="user-profile.php">
+                        <img src="images/user/user-sm-06.jpg" alt="User Image" />
+                        <span class="active bg-primary"></span>
+                    </a>
+                </div>
+                <div class="media-body">
+                    <a href="user-profile.php">
+                        <span class="title">Selena Wagner</span>
+                        <span>Photographer</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="plugins/jquery/jquery.min.js"></script>
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="plugins/simplebar/simplebar.min.js"></script>
@@ -66,8 +167,7 @@
     <script src="plugins/fullcalendar/daygrid-4.3.0/main.min.js"></script>
     <script src="js/calendar.js"></script>
 
-
     <!--  -->
-    </body>
+</body>
 
-    </html>
+</html
