@@ -47,6 +47,12 @@
   color: black;
 }
 
+.static-number {
+  display: grid;
+  place-items: center;
+}
+
+
 
 html {
   font-family: sans-serif;
@@ -15040,7 +15046,9 @@ table.dataTable thead .sorting {
 
 /* Card Header Dropdown */
 .card-header .dropdown .dropdown-toggle {
-  color: #8a909d;
+  color: #ffffff;
+  background-color: #0073f7;
+  border-color: #0073f7;
 }
 
 /* Chat Dropdown Status */

@@ -459,7 +459,7 @@ var horBarChart1 = document.querySelector("#horizontal-bar-chart");
 if (horBarChart1 !== null) {
   var horBarChartOptions = {
     chart: {
-      height: 325,
+      height: 335,
       type: "bar",
       toolbar: {
         show: false,
@@ -2374,7 +2374,7 @@ var SimplePieChart = document.querySelector("#simple-pie-chart");
 if (SimplePieChart !== null) {
   var simplePieChartOptions = {
     chart: {
-      width: 350,
+      width: 300,
       type: "pie",
     },
     colors: ["#9e6de0", "#46c79e", "#fd5190"],

@@ -58,7 +58,7 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <a href="index.html" class="btn btn-lg btn-primary w-100 fs-6">Login</a>
+                            <a href="index.php" class="btn btn-lg btn-primary w-100 fs-6">Login</a>
                         </div>
                         <div class="row">
                             <small class="text-center w-100 mb-3">OR</small>
