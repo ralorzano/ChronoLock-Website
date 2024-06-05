@@ -101,7 +101,7 @@
             <li>
               <a class="sidenav-item-link" href="admin-user-management.php">
                 <i class="mdi mdi-account-circle"></i>
-                <span class="nav-text" data-toggle="tooltip" title="Pending RFID Request">Users</span>
+                <span class="nav-text" data-toggle="tooltip" title="Users">Users</span>
               </a>
             </li>
 
@@ -126,11 +126,17 @@
               <ul class="collapse" id="users" data-parent="#sidebar-menu">
                 <div class="sub-menu">
                   <li>
-                    <a href="admin-studattendance.php">Student Attendance</a>
+                    <a class="sidenav-item-link" href="admin-studattendance.php">
+                      <span class="nav-text">Student Attendance</span>
+
+                    </a>
                   </li>
 
                   <li>
-                    <a href="admin-instattendance.php">Instructor Attendance</a>
+                    <a class="sidenav-item-link" href="admin-instattendance.php">
+                      <span class="nav-text">Instructor Attendance</span>
+
+                    </a>
                   </li>
             </li>
         </div>

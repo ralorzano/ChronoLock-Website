@@ -16,6 +16,14 @@
 
   <title>ChronoLock Admin-Pending RFID</title>
 
+
+  <!-- DATA TABLE -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/2.0.8/css/dataTables.bootstrap5.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/rowreorder/1.5.0/css/rowReorder.bootstrap5.css" rel="stylesheet">
+
+  <script defer src="js/dataTable.js"></script>
+
   <!-- BOOTSTRAP 5.3.3 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -42,6 +50,9 @@
   <!-- CALENDAR -->
   <link href="plugins/fullcalendar/core-4.3.1/main.min.css" rel="stylesheet">
   <link href="plugins/fullcalendar/daygrid-4.3.0/main.min.css" rel="stylesheet">
+
+  <link href="plugins/DataTables/DataTables-1.10.18/css/jquery.dataTables.min.css" rel="stylesheet" />
+
 
   <!--
     HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
@@ -102,7 +113,7 @@
             <li class="active">
               <a class="sidenav-item-link" href="admin-user-management.php">
                 <i class="mdi mdi-account-circle"></i>
-                <span class="nav-text" data-toggle="tooltip" title="Pending RFID Request">Users</span>
+                <span class="nav-text" data-toggle="tooltip" title="Users">Users</span>
               </a>
             </li>
 
@@ -127,11 +138,17 @@
               <ul class="collapse" id="users" data-parent="#sidebar-menu">
                 <div class="sub-menu">
                   <li>
-                    <a href="admin-studattendance.php">Student Attendance</a>
+                    <a class="sidenav-item-link" href="admin-studattendance.php">
+                      <span class="nav-text">Student Attendance</span>
+
+                    </a>
                   </li>
 
                   <li>
-                    <a href="admin-instattendance.php">Instructor Attendance</a>
+                    <a class="sidenav-item-link" href="admin-instattendance.php">
+                      <span class="nav-text">Instructor Attendance</span>
+
+                    </a>
                   </li>
             </li>
         </div>
@@ -184,8 +201,6 @@
         </div>
 
         <div class="row mt-4">
-
-
           <div class="col-md-9 d-flex justify-content-start">
             <div class="dropdown d-inline-block mb-3 mr-3 border border-dark rounded-2">
               <button class="btn btn-primary fw-bold" type="button" data-toggle="modal" data-target="#modal-add-event">
@@ -204,7 +219,7 @@
 
           <div class="col-md-3 d-flex justify-content-end">
             <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
-              <button class="btn btn-warning fw-bold" type="button">
+              <button class="btn btn-warning fw-bold" type="button" data-toggle="modal" data-target="#exampleModalForm">
                 <i class="mdi mdi-account-plus"></i>
                 Add New User
               </button>
@@ -214,35 +229,31 @@
 
         <!-- END -->
 
-
-
-
-
-        <div class="card card-default border border-dark mt-2">
+        <div class="card card-default border border-dark">
           <div class="card-header">
-            <h2 class="fs-3">User Management</h2>
+            <h1>User Management</h1>
           </div>
-          <div class="card-body">
-            <table class="table table-bordered table-hover">
-              <thead class="thead-dark">
-                <tr class="text-center">
-                  <th scope="col">#</th>
-                  <th scope="col">ID</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Course</th>
-                  <th scope="col">Year & Section</th>
-                  <th scope="col">Gender</th>
-                  <th scope="col">Actions</th>
+          <div class="card-body ">
+            <table id="example" class="table table-bordered table-hover" style="width:100%">
+              <thead class="table-dark">
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>ID</th>
+                  <th>Course</th>
+                  <th>Year & Section</th>
+                  <th>Gender</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
-                <tr class="text-center">
-                  <th scope="col">1</th>
-                  <td scope="row">C21104744</td>
-                  <td scope="row">Lorzano, Ralph H.</td>
-                  <td scope="row">BSIS</td>
-                  <td scope="row">1A</td>
-                  <td scope="row">Male</td>
+                <tr>
+                  <td>1</td>
+                  <td>Lorzano, Ralph H.</td>
+                  <td>C21104744</td>
+                  <td>BSIS</td>
+                  <td>1A</td>
+                  <td>Male</td>
                   <th>
                     <!-- Example single primary button -->
                     <div class="dropdown d-inline-block">
@@ -252,24 +263,22 @@
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <button class="dropdown-item">
                           <i class="mdi mdi-circle-edit-outline text-warning"></i>
-                          Edit
-                        </button>
+                          Edit</button>
                         <button class="dropdown-item">
                           <i class="mdi mdi-trash-can text-danger"></i>
-                          Delete
-                        </button>
+                          Delete</button>
                       </div>
                     </div>
                   </th>
                 </tr>
 
-                <tr class="text-center">
-                  <th scope="col">2</th>
-                  <td scope="row">C21122234</td>
-                  <td scope="row">Nacario, Jomarc I.</td>
-                  <td scope="row">BSIS</td>
-                  <td scope="row">1A</td>
-                  <td scope="row">Male</td>
+                <tr>
+                  <td>2</td>
+                  <td>Sotto, Edward L.</td>
+                  <td>C21123333</td>
+                  <td>BSIS</td>
+                  <td>1A</td>
+                  <td>Male</td>
                   <th>
                     <!-- Example single primary button -->
                     <div class="dropdown d-inline-block">
@@ -278,17 +287,20 @@
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <button class="dropdown-item">
-                          <i class="mdi mdi-circle-edit-outline"></i>
+                          <i class="mdi mdi-circle-edit-outline text-warning"></i>
                           Edit</button>
                         <button class="dropdown-item">
-                          <i class="mdi mdi-trash-can"></i>
+                          <i class="mdi mdi-trash-can text-danger"></i>
                           Delete</button>
                       </div>
                     </div>
                   </th>
                 </tr>
+
+
               </tbody>
             </table>
+
           </div>
         </div>
 
@@ -296,8 +308,74 @@
 
 
       </div>
+
+
+
+
     </div>
   </div>
+  </div>
+  </div>
+
+  <div class="modal fade" id="exampleModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalFormTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalFormTitle">Add New User</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="row">
+
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label for="exampleInputPassword1">RFID Code</label>
+                  <input type="text" class="form-control border border-dark border border-dark" id="exampleInputRFID" placeholder="RFID Code">
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label for="exampleInputUserType">Course</label>
+                  <div>
+                    <select class="form-select form-control border border-dark" aria-label="Default select example">
+                      <option selected>Select Course</option>
+                      <option value="1">BSIS</option>
+                      <option value="2">BSIT</option>
+                      <option value="3">BSCS & Staff</option>
+                      <option value="3">BLIS</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label for="exampleInputPassword1">User ID</label>
+                  <input type="text" class="form-control border border-dark" id="exampleInputUser" placeholder="Enter User ID">
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label for="exampleInputPassword1">User Name</label>
+                  <input type="text" class="form-control border border-dark" id="exampleInputUser" placeholder="Enter User Name">
+                </div>
+              </div>
+
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary btn-pill">Save Changes</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <?php include 'footer.php' ?>

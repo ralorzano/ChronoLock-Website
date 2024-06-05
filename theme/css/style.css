@@ -52,7 +52,40 @@
   place-items: center;
 }
 
+.form-select-sm {
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  padding-left: .5rem;
+  font-size: 18px;
+  border-radius: var(--bs-border-radius-sm);
+  border-color: #000000;
+  color: #000000;
+}
 
+div.dt-container div.dt-length label {
+    font-weight: normal;
+    text-align: left;
+    white-space: nowrap;
+    font-size: 18px;
+    color: #000000;
+}
+
+div.dt-container div.dt-search label {
+  font-weight: normal;
+  white-space: nowrap;
+  text-align: left;
+  font-size: 18px;
+  color: #000000;
+}
+
+div.dt-container div.dt-search input {
+  margin-left: 0.5em;
+  display: inline-block;
+  width: auto;
+  color: #000000;
+  font-size: 18px;
+  border-color: #000000;
+}
 
 html {
   font-family: sans-serif;
@@ -374,26 +407,32 @@ h1, h2, h3, h4, h5, h6,
 
 h1, .h1 {
   font-size: 2.34375rem;
+  color: #000000;
 }
 
 h2, .h2 {
   font-size: 1.875rem;
+  color: #000000;
 }
 
 h3, .h3 {
   font-size: 1.640625rem;
+  color: #000000;
 }
 
 h4, .h4 {
   font-size: 1.40625rem;
+  color: #000000;
 }
 
 h5, .h5 {
   font-size: 1.171875rem;
+  color: #000000;
 }
 
 h6, .h6 {
   font-size: 1.003125rem;
+  color: #000000;
 }
 
 .lead {
@@ -1909,7 +1948,7 @@ pre code {
 
 .table .thead-dark th {
   color: #ffffff;
-  background-color: #343a40;
+  background-color: #000000;
   border-color: #454d55;
 }
 .table .thead-light th {
@@ -1920,12 +1959,12 @@ pre code {
 
 .table-dark {
   color: #ffffff;
-  background-color: #343a40;
+  background-color: #000000;
 }
 .table-dark th,
 .table-dark td,
 .table-dark thead th {
-  border-color: #454d55;
+  border-color: #ffffff;
 }
 .table-dark.table-bordered {
   border: 0;
@@ -13525,6 +13564,7 @@ label {
 .sidebar .sub-menu > .active .sidenav-item-link {
   color: #31CE3C;
 }
+
 .sidebar .sub-menu .has-sub.active .sidenav-item-link {
   color: #31CE3C;
 }
@@ -13543,6 +13583,12 @@ label {
   white-space: nowrap;
   color: #bfc7d9;
 }
+
+/* Change color when the hover */
+.sidebar .sub-menu > li > a:hover {
+  color: #31CE3C;
+}
+
 .sidebar .sub-menu > li .sub-menu {
   padding-left: 2.18rem;
 }
@@ -13575,6 +13621,8 @@ label {
 .sidebar .sidenav-item-link .nav-text {
   margin-right: auto;
   text-transform: capitalize;
+  
+
 }
 .sidebar .sidenav-item-link .badge {
   padding: 0.4em 0.6em;
@@ -14398,11 +14446,11 @@ label {
 }
 .table thead th {
   text-transform: uppercase;
-  color: #31343d;
+  color: #ffffff;
   border-bottom: 0;
 }
 .table.table-dark thead th {
-  color: #ffffff;
+  color: #04082E;
 }
 
 /* Produc Data Table */
@@ -14431,7 +14479,7 @@ label {
 }
 .table.table-product thead th {
   text-transform: uppercase;
-  color: #31343d;
+  color: #ffffff;
   border-bottom: none;
   padding-left: 10px;
   padding-right: 10px;
@@ -14499,6 +14547,7 @@ table.dataTable thead .sorting {
 }
 
 /* Data table Filter */
+
 .dataTables_wrapper .dataTables_filter {
   float: none;
   text-align: left;
@@ -14510,7 +14559,7 @@ table.dataTable thead .sorting {
 }
 .dataTables_wrapper .dataTables_filter input {
   padding: 10px 15px;
-  border: 1px solid #e5e9f2;
+  border: 1px solid #000000;
   border-radius: 5px;
 }
 
@@ -14522,7 +14571,7 @@ table.dataTable thead .sorting {
   border: 1px solid #e5e9f2 !important;
   padding: 10px;
   background: none !important;
-  background-color: #ffffff;
+  background-color: #000000;
   margin-left: 5px;
   margin-right: 5px;
 }
@@ -14532,25 +14581,26 @@ table.dataTable thead .sorting {
   }
 }
 .dataTables_paginate.paging_simple_numbers .paginate_button:hover {
-  color: #31343d !important;
+  color: #000000 !important;
 }
 .dataTables_paginate.paging_simple_numbers .paginate_button.current {
   background: none !important;
-  background-color: #04082e !important;
+  background-color: #ffffff !important;
   border-color: #04082e !important;
-  color: #ffffff !important;
+  color: #000000 !important;
+  font-weight: 700;
 }
 .dataTables_paginate.paging_simple_numbers .paginate_button.current:hover {
-  color: #ffffff !important;
+  color: #000000 !important;
 }
 .dataTables_paginate.paging_simple_numbers .paginate_button.previous.disabled,
 .dataTables_paginate.paging_simple_numbers .paginate_button.next.disabled {
-  color: #8a909d !important;
+  color: #000000 !important;
   border-color: #e5e9f2 !important;
 }
 .dataTables_paginate.paging_simple_numbers .paginate_button.previous,
 .dataTables_paginate.paging_simple_numbers .paginate_button.next {
-  color: #04082e !important;
+  color: #000000 !important;
   border-color: #04082e !important;
   display: none;
 }

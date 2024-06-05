@@ -102,7 +102,7 @@
             <li>
               <a class="sidenav-item-link" href="admin-user-management.php">
                 <i class="mdi mdi-account-circle"></i>
-                <span class="nav-text" data-toggle="tooltip" title="Pending RFID Request">Users</span>
+                <span class="nav-text" data-toggle="tooltip" title="Users">Users</span>
               </a>
             </li>
 
@@ -127,11 +127,17 @@
               <ul class="collapse" id="users" data-parent="#sidebar-menu">
                 <div class="sub-menu">
                   <li>
-                    <a href="admin-studattendance.php">Student Attendance</a>
+                    <a class="sidenav-item-link" href="admin-studattendance.php">
+                      <span class="nav-text">Student Attendance</span>
+
+                    </a>
                   </li>
 
                   <li>
-                    <a href="admin-instattendance.php">Instructor Attendance</a>
+                    <a class="sidenav-item-link" href="admin-instattendance.php">
+                      <span class="nav-text">Instructor Attendance</span>
+
+                    </a>
                   </li>
             </li>
         </div>
@@ -197,7 +203,7 @@
 
         <div class="card card-default border border-dark">
           <div class="card-header">
-            <h2>RFID Pending Request</h2>
+            <h1>RFID Pending Request</h1>
           </div>
           <div class="card-body">
             <table class="table table-bordered table-hover">
@@ -259,11 +265,19 @@
         <div class="modal-body">
           <form>
             <div class="row">
+
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label for="exampleInputPassword1">RFID Code</label>
+                  <input type="text" class="form-control border border-dark border border-dark" id="exampleInputRFID" placeholder="RFID Code">
+                </div>
+              </div>
+
               <div class="col-lg-6">
                 <div class="form-group">
                   <label for="exampleInputUserType">User Type</label>
                   <div>
-                    <select class="form-select form-control" aria-label="Default select example">
+                    <select class="form-select form-control border border-dark" aria-label="Default select example">
                       <option selected>Select User Type</option>
                       <option value="1">Student</option>
                       <option value="2">Instructor</option>
@@ -274,45 +288,18 @@
                 </div>
               </div>
 
-              <div class="col-lg-6">
-                <div class="form-group">
-                  <label for="exampleInputPassword1">RFID Code</label>
-                  <input type="text" class="form-control" id="exampleInputRFID" placeholder="RFID Code">
-                </div>
-              </div>
 
               <div class="col-lg-6">
                 <div class="form-group">
                   <label for="exampleInputPassword1">User ID</label>
-                  <input type="text" class="form-control" id="exampleInputUser" placeholder="Enter User ID">
+                  <input type="text" class="form-control border border-dark" id="exampleInputUser" placeholder="Enter User ID">
                 </div>
               </div>
 
               <div class="col-lg-6">
                 <div class="form-group">
                   <label for="exampleInputPassword1">User Name</label>
-                  <input type="text" class="form-control" id="exampleInputUser" placeholder="Enter User Name">
-                </div>
-              </div>
-
-              <div class="col-lg-6">
-                <div class="form-group">
-                  <label for="exampleInputPassword1">User Age</label>
-                  <input type="text" class="form-control" id="exampleInputUser" placeholder="Enter User Age">
-                </div>
-              </div>
-
-
-              <div class="col-lg-6">
-                <div class="form-group">
-                  <label for="exampleInputUserType">Gender</label>
-                  <div>
-                    <select class="form-select form-control" aria-label="Default select example">
-                      <option selected>Select Gender</option>
-                      <option value="1">Male</option>
-                      <option value="2">Female</option>
-                    </select>
-                  </div>
+                  <input type="text" class="form-control border border-dark" id="exampleInputUser" placeholder="Enter User Name">
                 </div>
               </div>
 

@@ -16,6 +16,13 @@
 
   <title>ChronoLock Admin-Student Attendance</title>
 
+  <!-- DATA TABLE -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/2.0.8/css/dataTables.bootstrap5.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/rowreorder/1.5.0/css/rowReorder.bootstrap5.css" rel="stylesheet">
+
+  <script defer src="js/dataTable.js"></script>
+
   <!-- BOOTSTRAP 5.3.3 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -101,7 +108,7 @@
             <li>
               <a class="sidenav-item-link" href="admin-user-management.php">
                 <i class="mdi mdi-account-circle"></i>
-                <span class="nav-text" data-toggle="tooltip" title="Pending RFID Request">Users</span>
+                <span class="nav-text" data-toggle="tooltip" title="Users">Users</span>
               </a>
             </li>
 
@@ -125,12 +132,18 @@
               </a>
               <ul class="collapse show" id="users" data-parent="#sidebar-menu">
                 <div class="sub-menu">
-                  <li>
-                    <a href="admin-studattendance.php">Student Attendance</a>
+                <li class="active">
+                    <a class="sidenav-item-link" href="admin-studattendance.php">
+                      <span class="nav-text">Student Attendance</span>
+
+                    </a>
                   </li>
 
                   <li>
-                    <a href="admin-instattendance.php">Instructor Attendance</a>
+                    <a class="sidenav-item-link" href="admin-instattendance.php">
+                      <span class="nav-text">Instructor Attendance</span>
+
+                    </a>
                   </li>
             </li>
         </div>
@@ -215,7 +228,7 @@
             <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
               <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                 <i class="mdi mdi-timetable"></i>
-                Year
+                Year & Section
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="#">Action</a>
@@ -224,7 +237,7 @@
               </div>
             </div>
 
-            <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
+            <!-- <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
               <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                 <i class="mdi mdi-alpha-s-box"></i>
                 Section
@@ -234,7 +247,7 @@
                 <a class="dropdown-item" href="#">Another action</a>
                 <a class="dropdown-item" href="#">Something else here</a>
               </div>
-            </div>
+            </div> -->
 
             <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
               <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
@@ -262,37 +275,33 @@
         </div>
         <!-- END -->
 
-
-
         <div class="card card-default border border-dark">
           <div class="card-header">
-            <h2>Student Realtime Attendance</h2>
+            <h1>Student Realtime Attendance</h1>
           </div>
-          <div class="card-body">
-            <table class="table table-bordered table-hover">
-              <thead class="thead-dark">
-                <tr class="text-center">
-                  <th scope="col">Date</th>
-                  <th scope="col">Time</th>
-                  <th scope="col">Student Name</th>
-                  <th scope="col">Student ID</th>
-                  <th scope="col">Year</th>
-                  <th scope="col">Section</th>
-                  <th scope="col">Course</th>
-                  <th scope="col">Status</th>
-                  <th scope="col">Action</th>
+          <div class="card-body ">
+            <table id="example" class="table table-bordered table-hover" style="width:100%">
+              <thead class="table-dark">
+                <tr>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Student Name</th>
+                  <th>Student ID</th>
+                  <th>Course</th>
+                  <th>Year & Section</th>
+                  <th>Status</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
-                <tr class="text-center">
-                  <td scope="row">June 3, 2024</td>
-                  <td scope="row">11:35 a.m.</td>
-                  <td scope="row">Lorzano, Ralph H.</td>
-                  <td scope="row">C21104744</td>
-                  <td scope="row">3</td>
-                  <td scope="row">F</td>
-                  <td scope="row">BSIS</td>
-                  <td scope="row" class="text-success fw-bolder">Present</td>
+                <tr>
+                  <td>June 3, 2024</td>
+                  <td>7:32 a.m.</td>
+                  <td>Lorzano, Ralph H.</td>
+                  <td>C21104744</td>
+                  <td>BSIS</td>
+                  <td>1A</td>
+                  <th style="color: #31CE3C;">Present</th>
                   <th>
                     <!-- Example single primary button -->
                     <div class="dropdown d-inline-block">
@@ -310,12 +319,17 @@
                     </div>
                   </th>
                 </tr>
+              
+
               </tbody>
             </table>
+
           </div>
-
-
         </div>
+
+
+    
+
       </div>
     </div>
   </div>

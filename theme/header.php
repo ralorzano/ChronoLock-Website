@@ -5,7 +5,7 @@
                     <span class="sr-only">Toggle navigation</span>
                 </button>
 
-                <span class="page-title">Hello, Instructor!</span>
+                <span class="page-title">Hello, User!</span>
 
                 <div class="navbar-right">
                     <!-- search form -->
