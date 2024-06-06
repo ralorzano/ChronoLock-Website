@@ -128,14 +128,12 @@
                   <li>
                     <a class="sidenav-item-link" href="admin-studattendance.php">
                       <span class="nav-text">Student Attendance</span>
-
                     </a>
                   </li>
 
                   <li>
                     <a class="sidenav-item-link" href="admin-instattendance.php">
                       <span class="nav-text">Instructor Attendance</span>
-
                     </a>
                   </li>
             </li>
@@ -165,8 +163,9 @@
           </ul>
         </div>
       </div>
+    </aside>
   </div>
-  </aside>
+
 
   <!-- ====================================
       ——— PAGE WRAPPER

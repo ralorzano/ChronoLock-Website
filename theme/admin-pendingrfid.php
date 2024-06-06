@@ -189,22 +189,26 @@
           </div>
         </div>
 
-        <div class="row mt-4">
-          <div class="col-xl-12 col-md-12 d-flex justify-content-end">
-            <!-- Sort button -->
-            <div class="dropdown d-inline-block mb-3 mr-3 border border-dark rounded-2">
-              <button class="btn btn-primary fw-bold" type="button" data-toggle="modal" data-target="#modal-add-event">
-                <i class=" mdi mdi-calendar-plus"></i>
-                ADD RFID
-              </button>
-            </div>
-          </div>
-        </div>
 
         <div class="card card-default border border-dark">
           <div class="card-header">
             <h1>RFID Pending Request</h1>
+
+            <div class="row">
+              <div class="col-xl-12 col-md-12 d-flex justify-content-end">
+                <!-- Sort button -->
+                <div class="dropdown d-inline-block border border-dark rounded">
+                  <button class="btn btn-primary fw-bold" type="button" data-toggle="modal" data-target="#modal-add-event">
+                    <i class=" mdi mdi-calendar-plus"></i>
+                    ADD RFID
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
+
+
+
           <div class="card-body">
             <table class="table table-bordered table-hover">
               <thead class="thead-dark">
