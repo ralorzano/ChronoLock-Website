@@ -21,6 +21,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.datatables.net/2.0.8/css/dataTables.bootstrap5.css" rel="stylesheet">
   <link href="https://cdn.datatables.net/rowreorder/1.5.0/css/rowReorder.bootstrap5.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/responsive/3.0.2/css/responsive.dataTables.css" rel="stylesheet">
 
   <script defer src="js/dataTable.js"></script>
 
@@ -215,21 +216,21 @@
         <div class="d-flex justify-content-end mb-3"> <!-- Align content to the right -->
           <!-- Live Date and Time -->
           <div>
-            <p class="text-center display-4 date-time" id="liveDateTime">Your Date and Time</p>
+            <p class="text-center date-time" id="liveDateTime">Your Date and Time</p>
           </div>
         </div>
 
         <div class="row mt-4">
           <div class="col-md-9 d-flex justify-content-start">
-            <div class="dropdown d-inline-block mb-3 mr-3 border border-dark rounded-2">
-              <button class="btn btn-primary fw-bold" type="button" data-toggle="modal" data-target="#modal-add-event">
+            <div class="dropdown d-inline-block mb-2 mr-3 rounded-2">
+              <button class="btn btn-primary btn-md fw-bold" type="button" data-toggle="modal" data-target="#modal-add-event">
                 <i class="mdi mdi-file-check"></i>
                 Import
               </button>
             </div>
-            <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
+            <div class="dropdown d-inline-block mb-3">
               <div class="custom-file rounded">
-                <input type="file" class="custom-file-input" accept=".xlsx, .xls" required>
+                <input type="file" class="custom-file-input" required>
                 <label class="custom-file-label" for="coverImage">Choose file...</label>
                 <div class="invalid-feedback">Example invalid custom file feedback</div>
               </div>
@@ -237,7 +238,7 @@
           </div>
 
           <div class="col-md-3 d-flex justify-content-end">
-            <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
+            <div class="dropdown d-inline-block mb-2 rounded-2">
               <button class="btn btn-warning fw-bold" type="button" data-toggle="modal" data-target="#exampleModalForm">
                 <i class="mdi mdi-account-plus"></i>
                 Add New User
@@ -252,8 +253,8 @@
           <div class="card-header">
             <h1>User Management</h1>
           </div>
-          <div class="card-body ">
-            <table id="example" class="table table-bordered table-hover" style="width:100%">
+          <div class="card-body col-md-12">
+            <table id="example" class="table table-bordered table-hover nowrap" style="width:100%">
               <thead class="table-dark">
                 <tr>
                   <th>#</th>

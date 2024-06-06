@@ -156,6 +156,8 @@
 <script defer src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap5.js"></script>
 <script defer src="https://cdn.datatables.net/rowreorder/1.5.0/js/dataTables.rowReorder.js"></script>
 <script defer src="https://cdn.datatables.net/rowreorder/1.5.0/js/rowReorder.bootstrap5.js"></script>
+<script defer src="https://cdn.datatables.net/responsive/3.0.2/js/dataTables.responsive.js"></script>
+<script defer src="https://cdn.datatables.net/responsive/3.0.2/js/responsive.dataTables.js"></script>
 
 
 <!--  -->

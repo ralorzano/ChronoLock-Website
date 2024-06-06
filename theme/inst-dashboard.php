@@ -159,7 +159,7 @@
                 <div class="d-flex justify-content-end mb-3"> <!-- Align content to the right -->
                     <!-- Live Date and Time -->
                     <div>
-                        <p class="text-center display-4 date-time" id="liveDateTime">Your Date and Time</p>
+                        <p class="text-center date-time" id="liveDateTime">Your Date and Time</p>
                     </div>
                 </div>
 

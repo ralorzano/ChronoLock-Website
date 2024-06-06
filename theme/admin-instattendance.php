@@ -20,6 +20,8 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.datatables.net/2.0.8/css/dataTables.bootstrap5.css" rel="stylesheet">
   <link href="https://cdn.datatables.net/rowreorder/1.5.0/css/rowReorder.bootstrap5.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/responsive/3.0.2/css/responsive.dataTables.css" rel="stylesheet">
+
 
   <script defer src="js/dataTable.js"></script>
 
@@ -212,7 +214,7 @@
         <div class="d-flex justify-content-end"> <!-- Align content to the right -->
           <!-- Live Date and Time -->
           <div>
-            <p class="text-center display-4 date-time" id="liveDateTime">Your Date and Time</p>
+            <p class="text-center date-time" id="liveDateTime">Your Date and Time</p>
           </div>
         </div>
 
@@ -221,7 +223,7 @@
         <div class="row mt-4">
           <div class="col-xl-9 col-md-9">
             <!-- Example single primary button -->
-            <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
+            <div class="dropdown d-inline-block mb-3 ">
               <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                 <i class="mdi mdi-calendar"></i>
                 Date <!-- CALENDAR TYPE -->
@@ -233,7 +235,7 @@
               </div>
             </div>
 
-            <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
+            <div class="dropdown d-inline-block mb-3 ">
               <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                 <i class="mdi mdi-timer"></i>
                 Time
@@ -245,7 +247,7 @@
               </div>
             </div>
 
-            <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
+            <div class="dropdown d-inline-block mb-3 ">
               <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                 <i class="mdi mdi-account-arrow-right"></i>
                 Instructor Name
@@ -257,7 +259,7 @@
               </div>
             </div>
 
-            <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
+            <div class="dropdown d-inline-block mb-3 ">
               <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                 <i class="mdi mdi-account-card-details"></i>
                 Instructor ID
@@ -273,7 +275,7 @@
 
           <div class="col-xl-3 col-md-3 d-flex justify-content-end">
             <!-- Sort button -->
-            <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
+            <div class="dropdown d-inline-block mb-3 ">
               <button class="btn btn-warning fw-bold" type="button">
                 <i class="mdi mdi-sort"></i>
                 SORT

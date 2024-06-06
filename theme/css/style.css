@@ -39,12 +39,18 @@
   box-sizing: border-box;
 }
 
+.card-title {
+  font-size: 35px;
+}
+
 .custom-hr {
   border-top: 0.1px solid white; /* Adjust the border properties as needed */
 }
 
 .date-time {
   color: black;
+  font-size: 25px;
+  font-weight: 500;
 }
 
 .static-number {
@@ -71,6 +77,11 @@ div.dt-container div.dt-length label {
     color: #000000;
 }
 
+div.dt-container div.dt-search {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
 div.dt-container div.dt-search label {
   font-weight: bold;
   white-space: nowrap;
@@ -84,7 +95,7 @@ div.dt-container div.dt-search input {
   display: inline-block;
   width: auto;
   color: #000000;
-  font-size: 18px;
+  font-size: 16px;
   border-color: #000000;
 }
 
@@ -2153,7 +2164,7 @@ select.form-control:focus::-ms-value {
 }
 
 .form-control-sm {
-  height: calc(1.5em + 0.25rem + 2px);
+  /* height: calc(1.5em + 0.25rem + 2px); */
   padding: 0.125rem 0.625rem;
   font-size: 0.75rem;
   line-height: 1.5;
@@ -11615,14 +11626,14 @@ button {
   .content {
     margin-right: auto;
     margin-left: auto;
-    padding-top: 1.9rem;
+    padding-top: 1rem;
     padding-left: 1.875rem;
     padding-right: 1.875rem;
   }
 }
 @media (min-width: 1200px) {
   .content {
-    padding-top: 2.5rem;
+    padding-top: 1rem;
     padding-bottom: 0.625rem;
   }
 }
@@ -11867,11 +11878,11 @@ button {
 }
 .card-default .card-header {
   padding-top: 1.875rem;
-  padding-bottom: 1rem;
+  /* padding-bottom: 1rem; */
   display: flex;
   justify-content: space-between;
   background-color: transparent;
-  border-bottom: none;
+  /* border-bottom: none; */
   flex-wrap: wrap;
   text-transform: capitalize;
 }

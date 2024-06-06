@@ -204,7 +204,7 @@
         <div class="d-flex justify-content-end mb-3"> <!-- Align content to the right -->
           <!-- Live Date and Time -->
           <div>
-            <p class="text-center display-4 date-time" id="liveDateTime">Your Date and Time</p>
+            <p class="text-center date-time" id="liveDateTime">Your Date and Time</p>
           </div>
         </div>
 
@@ -216,7 +216,7 @@
             <div class="row">
               <div class="col-xl-12 col-md-12 d-flex justify-content-end">
                 <!-- Sort button -->
-                <div class="dropdown d-inline-block border border-dark rounded">
+                <div class="dropdown d-inline-block ">
                   <button class="btn btn-primary fw-bold" type="button" data-toggle="modal" data-target="#modal-add-event">
                     <i class=" mdi mdi-calendar-plus"></i>
                     ADD RFID

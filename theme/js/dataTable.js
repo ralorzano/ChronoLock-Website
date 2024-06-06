@@ -4,6 +4,9 @@ $(document).ready(function () {
         rowReorder: true,
         pagingType: 'simple_numbers',
         responsive: true,
+        rowReorder: {
+            selector: 'td:nth-child(2)'
+        }
         // "searching": false,
     } );
     });

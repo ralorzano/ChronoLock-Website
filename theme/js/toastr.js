@@ -16,5 +16,5 @@ document.addEventListener('DOMContentLoaded', function() {
         "showMethod": "fadeIn",
         "hideMethod": "fadeOut"
     };
-    toastr["success"]("Welcome to ChronoLock Dashboard!", "How is you day!");
+    toastr["success"]("Welcome to ChronoLock Dashboard!", "How is your day!");
 });

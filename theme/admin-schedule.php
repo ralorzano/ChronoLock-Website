@@ -203,32 +203,33 @@
         <div class="d-flex justify-content-end mb-3"> <!-- Align content to the right -->
           <!-- Live Date and Time -->
           <div>
-            <p class="text-center display-4 date-time" id="liveDateTime">Your Date and Time</p>
+            <p class="text-center date-time" id="liveDateTime">Your Date and Time</p>
           </div>
         </div>
 
-        <div class="row mt-4">
-          <div class="col-xl-12 col-md-12 d-flex justify-content-end">
-            <!-- Sort button -->
-            <div class="dropdown d-inline-block mb-3 mr-3 border border-dark rounded-2">
-              <button class="btn btn-primary fw-bold" type="button" data-toggle="modal" data-target="#modal-add-event">
-                <i class=" mdi mdi-calendar-plus"></i>
-                ADD SCHEDULE
-              </button>
-            </div>
-            <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
-              <button class="btn btn-warning fw-bold" type="button">
-                <i class="mdi mdi-cloud-print-outline"></i>
-                PRINT
-              </button>
-            </div>
-          </div>
-        </div>
+
 
 
         <div class="card card-default border border-dark">
           <div class="card-header card-header-border-bottom d-flex justify-content-between align-items-center">
-            <h2>Schedule</h2>
+            <h1>Schedule</h1>
+            <div class="row mt-4">
+              <div class="col-xl-12 col-md-12 d-flex justify-content-end">
+                <!-- Sort button -->
+                <div class="dropdown d-inline-block mb-3 mr-3">
+                  <button class="btn btn-primary fw-bold" type="button" data-toggle="modal" data-target="#modal-add-event">
+                    <i class=" mdi mdi-calendar-plus"></i>
+                    ADD SCHEDULE
+                  </button>
+                </div>
+                <div class="dropdown d-inline-block mb-3">
+                  <button class="btn btn-warning fw-bold" type="button">
+                    <i class="mdi mdi-cloud-print-outline"></i>
+                    PRINT
+                  </button>
+                </div>
+              </div>
+            </div>
             <div class="card-body">
               <div class=" full-calendar mb-5">
                 <div id="calendar"></div>
