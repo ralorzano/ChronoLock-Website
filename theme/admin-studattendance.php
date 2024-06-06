@@ -132,7 +132,7 @@
               </a>
               <ul class="collapse show" id="users" data-parent="#sidebar-menu">
                 <div class="sub-menu">
-                <li class="active">
+                  <li class="active">
                     <a class="sidenav-item-link" href="admin-studattendance.php">
                       <span class="nav-text">Student Attendance</span>
 
@@ -154,6 +154,25 @@
           <a class="sidenav-item-link" href="admin-rfidaccount.php">
             <i class="mdi mdi-radio-tower"></i>
             <span class="nav-text" data-toggle="tooltip" title="RFID Accounts">RFID Accounts</span>
+          </a>
+        </li>
+
+        <!-- Horizontal line with custom class -->
+        <hr class="my-2 custom-hr">
+
+        <li class="section-title">Others</li>
+
+        <li>
+          <a class="sidenav-item-link" href="">
+            <i class="mdi mdi-alpha-l-box "></i>
+            <span class="nav-text" data-toggle="tooltip" title="Logs">Logs</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="sidenav-item-link" href="">
+            <i class="mdi mdi-file-export"></i>
+            <span class="nav-text" data-toggle="tooltip" title="Report Generation">Report Generation</span>
           </a>
         </li>
 
@@ -319,7 +338,7 @@
                     </div>
                   </th>
                 </tr>
-              
+
 
               </tbody>
             </table>
@@ -328,7 +347,7 @@
         </div>
 
 
-    
+
 
       </div>
     </div>

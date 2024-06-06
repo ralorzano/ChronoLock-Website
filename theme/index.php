@@ -42,14 +42,16 @@
   <link href="plugins/fullcalendar/core-4.3.1/main.min.css" rel="stylesheet">
   <link href="plugins/fullcalendar/daygrid-4.3.0/main.min.css" rel="stylesheet">
 
-  <!--
-    HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
-  -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  <!-- TOASTER -->
+  <link href="plugins/toaster/toastr.min.css" rel="stylesheet">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- Toastr JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/toastr.js"></script>
+
   <script src="plugins/nprogress/nprogress.js"></script>
 </head>
 
@@ -60,6 +62,8 @@
     });
     NProgress.start();
   </script>
+
+  <div id="toast"></div>
 
   <!-- ====================================
     ——— WRAPPER
@@ -110,7 +114,6 @@
 
             <li class="section-title">Features</li>
 
-
             <li>
               <a class="sidenav-item-link" href="admin-schedule.php">
                 <i class="mdi mdi-calendar-today "></i>
@@ -128,12 +131,14 @@
                   <li>
                     <a class="sidenav-item-link" href="admin-studattendance.php">
                       <span class="nav-text">Student Attendance</span>
+
                     </a>
                   </li>
 
                   <li>
                     <a class="sidenav-item-link" href="admin-instattendance.php">
                       <span class="nav-text">Instructor Attendance</span>
+
                     </a>
                   </li>
             </li>
@@ -147,6 +152,26 @@
             <span class="nav-text" data-toggle="tooltip" title="RFID Accounts">RFID Accounts</span>
           </a>
         </li>
+
+        <!-- Horizontal line with custom class -->
+        <hr class="my-2 custom-hr">
+
+        <li class="section-title">Others</li>
+
+        <li>
+          <a class="sidenav-item-link" href="admin-logs.php">
+            <i class="mdi mdi-alpha-l-box "></i>
+            <span class="nav-text" data-toggle="tooltip" title="Logs">Logs</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="sidenav-item-link" href="admin-report-generation.php">
+            <i class="mdi mdi-file-export"></i>
+            <span class="nav-text" data-toggle="tooltip" title="Report Generation">Report Generation</span>
+          </a>
+        </li>
+
 
         </ul>
       </div>
@@ -163,9 +188,8 @@
           </ul>
         </div>
       </div>
-    </aside>
   </div>
-
+  </aside>
 
   <!-- ====================================
       ——— PAGE WRAPPER

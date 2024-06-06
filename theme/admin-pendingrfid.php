@@ -151,6 +151,25 @@
           </a>
         </li>
 
+        <!-- Horizontal line with custom class -->
+        <hr class="my-2 custom-hr">
+
+        <li class="section-title">Others</li>
+
+        <li>
+          <a class="sidenav-item-link" href="">
+            <i class="mdi mdi-alpha-l-box "></i>
+            <span class="nav-text" data-toggle="tooltip" title="Logs">Logs</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="sidenav-item-link" href="">
+            <i class="mdi mdi-file-export"></i>
+            <span class="nav-text" data-toggle="tooltip" title="Report Generation">Report Generation</span>
+          </a>
+        </li>
+
         </ul>
       </div>
 

@@ -153,6 +153,25 @@
           </a>
         </li>
 
+        <!-- Horizontal line with custom class -->
+        <hr class="my-2 custom-hr">
+
+        <li class="section-title">Others</li>
+
+        <li>
+          <a class="sidenav-item-link" href="">
+            <i class="mdi mdi-alpha-l-box "></i>
+            <span class="nav-text" data-toggle="tooltip" title="Logs">Logs</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="sidenav-item-link" href="">
+            <i class="mdi mdi-file-export"></i>
+            <span class="nav-text" data-toggle="tooltip" title="Report Generation">Report Generation</span>
+          </a>
+        </li>
+
         </ul>
       </div>
 
@@ -241,8 +260,8 @@
                   <td>63</td>
                   <td>2011-07-25</td>
                   <td>$170,750</td>
-                  <td  class="text-danger fw-bold">Deactivated</td>
-                 
+                  <td class="text-danger fw-bold">Deactivated</td>
+
                   <th>
                     <!-- Example single primary button -->
                     <div class="dropdown d-inline-block">
@@ -268,7 +287,7 @@
                   <td>2009-01-12</td>
                   <td>$86,000</td>
                   <td class="text-warning fw-bold">Blacklisted</td>
-                
+
                   <th>
                     <!-- Example single primary button -->
                     <div class="dropdown d-inline-block">
@@ -291,7 +310,7 @@
 
           </div>
         </div>
-        
+
       </div>
     </div>
   </div>

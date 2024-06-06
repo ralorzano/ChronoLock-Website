@@ -14,18 +14,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>ChronoLock Admin-Instructor Attendance</title>
-
-  <!-- DATA TABLE -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.datatables.net/2.0.8/css/dataTables.bootstrap5.css" rel="stylesheet">
-  <link href="https://cdn.datatables.net/rowreorder/1.5.0/css/rowReorder.bootstrap5.css" rel="stylesheet">
-
-  <script defer src="js/dataTable.js"></script>
+  <title>ChronoLock Admin-Pending RFID</title>
 
   <!-- BOOTSTRAP 5.3.3 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 
   <!-- GOOGLE FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet" />
@@ -125,12 +119,12 @@
               </a>
             </li>
 
-            <li class="has-sub active">
+            <li class="has-sub">
               <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#users" aria-expanded="false" aria-controls="users">
                 <i class="mdi mdi-book-open-page-variant"></i>
                 <span class="nav-text" data-toggle="tooltip" title="Attendance">Attendance</span> <b class="caret"></b>
               </a>
-              <ul class="collapse show" id="users" data-parent="#sidebar-menu">
+              <ul class="collapse" id="users" data-parent="#sidebar-menu">
                 <div class="sub-menu">
                   <li>
                     <a class="sidenav-item-link" href="admin-studattendance.php">
@@ -139,7 +133,7 @@
                     </a>
                   </li>
 
-                  <li class="active">
+                  <li>
                     <a class="sidenav-item-link" href="admin-instattendance.php">
                       <span class="nav-text">Instructor Attendance</span>
 
@@ -169,7 +163,7 @@
           </a>
         </li>
 
-        <li>
+        <li class="active">
           <a class="sidenav-item-link" href="">
             <i class="mdi mdi-file-export"></i>
             <span class="nav-text" data-toggle="tooltip" title="Report Generation">Report Generation</span>
@@ -194,7 +188,6 @@
   </div>
   </aside>
 
-
   <!-- ====================================
       ——— PAGE WRAPPER
       ===================================== -->
@@ -206,163 +199,16 @@
         ——— CONTENT WRAPPER
         ===================================== -->
     <div class="content-wrapper">
-      <div class="content">
-
-
-        <div class="d-flex justify-content-end"> <!-- Align content to the right -->
-          <!-- Live Date and Time -->
-          <div>
-            <p class="text-center display-4 date-time" id="liveDateTime">Your Date and Time</p>
-          </div>
-        </div>
-
-        <!-- DROPRDOWN NAV -->
-
-        <div class="row mt-4">
-          <div class="col-xl-9 col-md-9">
-            <!-- Example single primary button -->
-            <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
-              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                <i class="mdi mdi-calendar"></i>
-                Date <!-- CALENDAR TYPE -->
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </div>
-
-            <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
-              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                <i class="mdi mdi-timer"></i>
-                Time
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </div>
-
-            <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
-              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                <i class="mdi mdi-account-arrow-right"></i>
-                Instructor Name
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </div>
-
-            <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
-              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                <i class="mdi mdi-account-card-details"></i>
-                Instructor ID
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="col-xl-3 col-md-3 d-flex justify-content-end">
-            <!-- Sort button -->
-            <div class="dropdown d-inline-block mb-3 border border-dark rounded-2">
-              <button class="btn btn-warning fw-bold" type="button">
-                <i class="mdi mdi-sort"></i>
-                SORT
-              </button>
-            </div>
-          </div>
+        <div class="content">
 
         </div>
-        <!-- END -->
 
-
-        <div class="card card-default border border-dark">
-          <div class="card-header">
-            <h1>Instructor Realtime Attendance</h1>
-          </div>
-          <div class="card-body ">
-            <table id="example" class="table table-bordered table-hover" style="width:100%">
-              <thead class="table-dark">
-                <tr>
-                  <th>Date</th>
-                  <th>Time</th>
-                  <th>Instructor Name</th>
-                  <th>Instructor ID</th>
-                  <th>Status</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>June 3, 2024</td>
-                  <td>7:30 a.m.</td>
-                  <td>Sotto, Edward L.</td>
-                  <td>C211723894</td>
-                  <th style="color: #31CE3C;">Present</th>
-                  <th>
-                    <!-- Example single primary button -->
-                    <div class="dropdown d-inline-block">
-                      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                        Actions
-                      </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <button class="dropdown-item">
-                          <i class="mdi mdi-circle-edit-outline text-warning"></i>
-                          Edit</button>
-                        <button class="dropdown-item">
-                          <i class="mdi mdi-trash-can text-danger"></i>
-                          Delete</button>
-                      </div>
-                    </div>
-                  </th>
-                </tr>
-
-
-              </tbody>
-            </table>
-
-          </div>
-        </div>
-
-      </div>
     </div>
-  </div>
 
 
   </div>
   </div>
 
-
-
-  <!-- Footer -->
-  <!-- <footer class="footer mt-auto">
-          <div class="copyright bg-white">
-            <p>
-              &copy; <span id="copy-year"></span> Copyright Mono Dashboard
-              Bootstrap Template by
-              <a
-                class="text-primary"
-                href="http://www.iamabdus.com/"
-                target="_blank"
-                >Abdus</a
-              >.
-            </p>
-          </div>
-          <script>
-            var d = new Date();
-            var year = d.getFullYear();
-            document.getElementById("copy-year").innerHTML = year;
-          </script>
-        </footer> -->
   </div>
   </div>
 
