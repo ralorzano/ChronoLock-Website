@@ -166,20 +166,26 @@
     <div class="content-wrapper">
       <div class="content">
 
-        <div class="d-flex justify-content-end mb-3"> <!-- Align content to the right -->
+      <div class="d-flex justify-content-between align-items-center">
+          <!-- Navigation -->
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+              <li class="breadcrumb-item active"><a href="admin-schedule.php">Schedule</a></li>
+            </ol>
+          </nav>
+
           <!-- Live Date and Time -->
           <div>
-            <p class="text-center date-time" id="liveDateTime">Your Date and Time</p>
+            <p class="text-center date-time mb-3" id="liveDateTime">Your Date and Time</p>
           </div>
         </div>
 
 
-
-
-        <div class="card card-default border border-dark">
+        <div class="card card-default">
           <div class="card-header card-header-border-bottom d-flex justify-content-between align-items-center">
             <h1>Schedule</h1>
-            <div class="row mt-4">
+            <div class="row">
               <div class="col-xl-12 col-md-12 d-flex justify-content-end">
                 <!-- Sort button -->
                 <div class="dropdown d-inline-block mb-3 mr-3">
@@ -232,7 +238,7 @@
           <div class="modal-body px-4">
             <div class="form-group">
               <label for="firstName">Title</label>
-              <input type="text" class="form-control" value="Meeting" />
+              <input type="text" class="form-control  border border-dark" value="Meeting" />
             </div>
 
             <div class="row">
@@ -240,12 +246,12 @@
                 <div class="form-group">
                   <label for="firstName">Date</label>
                   <div class="input-group mb-2">
-                    <div class="input-group-prepend">
+                    <div class="input-group-prepend border border-dark">
                       <span class="input-group-text py-1">
                         <i class="mdi mdi-calendar-range"></i>
                       </span>
                     </div>
-                    <input type="text" class="form-control" name="dateRange" value="" placeholder="Date" />
+                    <input type="text" class="form-control  border border-dark" name="dateRange" value="" placeholder="Date" />
                   </div>
                 </div>
               </div>
@@ -253,7 +259,7 @@
               <div class="col-lg-6">
                 <div class="form-group">
                   <label for="exampleFormControlSelect3">Time</label>
-                  <select class="form-control" id="exampleFormControlSelect3">
+                  <select class="form-control  border border-dark" id="exampleFormControlSelect3">
                     <option>10:00am</option>
                     <option>10:30am</option>
                     <option>11am</option>
@@ -266,7 +272,7 @@
 
             <div class="form-group mb-0">
               <label for="firstName">Description</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+              <textarea class="form-control  border border-dark" id="exampleFormControlTextarea1" rows="5"></textarea>
             </div>
           </div>
 

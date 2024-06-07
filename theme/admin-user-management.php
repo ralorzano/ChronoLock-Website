@@ -166,14 +166,22 @@
     <div class="content-wrapper">
       <div class="content">
 
-        <div class="d-flex justify-content-end mb-3"> <!-- Align content to the right -->
+        <div class="d-flex justify-content-between align-items-center">
+          <!-- Navigation -->
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+              <li class="breadcrumb-item active"><a href="admin-user-management.php">User Management</a></li>
+            </ol>
+          </nav>
+
           <!-- Live Date and Time -->
           <div>
-            <p class="text-center date-time" id="liveDateTime">Your Date and Time</p>
+            <p class="text-center date-time mb-3" id="liveDateTime">Your Date and Time</p>
           </div>
         </div>
 
-        <div class="row mt-4">
+        <div class="row">
           <div class="col-md-9 d-flex justify-content-start">
             <div class="dropdown d-inline-block mb-2 mr-3 rounded-2">
               <button class="btn btn-primary btn-md fw-bold" type="button" data-toggle="modal" data-target="#modal-add-event">
@@ -202,20 +210,20 @@
 
         <!-- END -->
 
-        <div class="card card-default border border-dark">
+        <div class="card card-default">
           <div class="card-header">
             <h1>User Management</h1>
           </div>
-          <div class="card-body col-md-12">
+          <div class="card-body">
             <table id="example" class="table table-bordered table-hover nowrap" style="width:100%">
               <thead class="table-dark">
                 <tr>
                   <th>#</th>
                   <th>Name</th>
                   <th>ID</th>
-                  <th>Course</th>
-                  <th>Year & Section</th>
+                  <th>Email</th>
                   <th>Gender</th>
+                  <th>Age</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -224,9 +232,9 @@
                   <td>1</td>
                   <td>Lorzano, Ralph H.</td>
                   <td>C21104744</td>
-                  <td>BSIS</td>
-                  <td>1A</td>
+                  <td>ralorzano@my.cspc.edu.ph</td>
                   <td>Male</td>
+                  <td>22</td>
                   <th>
                     <!-- Example single primary button -->
                     <div class="dropdown d-inline-block">
@@ -234,7 +242,7 @@
                         Actions
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <button class="dropdown-item">
+                        <button class="dropdown-item" type="button" data-toggle="modal" data-target="#exampleModalForm">
                           <i class="mdi mdi-circle-edit-outline text-warning"></i>
                           Edit</button>
                         <button class="dropdown-item">
@@ -249,9 +257,9 @@
                   <td>2</td>
                   <td>Sotto, Edward L.</td>
                   <td>C21123333</td>
-                  <td>BSIS</td>
-                  <td>1A</td>
-                  <td>Male</td>
+                  <td>edwsotto@my.cspc.edu.ph</td>
+                  <td>Female</td>
+                  <td>22</td>
                   <th>
                     <!-- Example single primary button -->
                     <div class="dropdown d-inline-block">
@@ -259,7 +267,7 @@
                         Actions
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <button class="dropdown-item">
+                        <button class="dropdown-item" type="button" data-toggle="modal" data-target="#exampleModalForm">
                           <i class="mdi mdi-circle-edit-outline text-warning"></i>
                           Edit</button>
                         <button class="dropdown-item">
@@ -291,7 +299,7 @@
   </div>
 
   <div class="modal fade" id="exampleModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalFormTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalFormTitle">Add New User</h5>
@@ -305,47 +313,52 @@
 
               <div class="col-lg-6">
                 <div class="form-group">
-                  <label for="exampleInputPassword1">RFID Code</label>
-                  <input type="text" class="form-control border border-dark border border-dark" id="exampleInputRFID" placeholder="RFID Code">
+                  <label>Name</label>
+                  <input type="text" class="form-control border border-dark border border-dark" id="exampleInputRFID" placeholder="ex. Sotto, Edward L.">
                 </div>
               </div>
 
               <div class="col-lg-6">
                 <div class="form-group">
-                  <label for="exampleInputUserType">Course</label>
-                  <div>
-                    <select class="form-select form-control border border-dark" aria-label="Default select example">
-                      <option selected>Select Course</option>
-                      <option value="1">BSIS</option>
-                      <option value="2">BSIT</option>
-                      <option value="3">BSCS & Staff</option>
-                      <option value="3">BLIS</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-
-              <div class="col-lg-6">
-                <div class="form-group">
-                  <label for="exampleInputPassword1">User ID</label>
+                  <label>ID</label>
                   <input type="text" class="form-control border border-dark" id="exampleInputUser" placeholder="Enter User ID">
                 </div>
               </div>
 
               <div class="col-lg-6">
                 <div class="form-group">
-                  <label for="exampleInputPassword1">User Name</label>
-                  <input type="text" class="form-control border border-dark" id="exampleInputUser" placeholder="Enter User Name">
+                  <label>Email</label>
+                  <input type="text" class="form-control border border-dark" id="exampleInputUser" placeholder="ex. edsotto@my.cspc.edu.ph">
                 </div>
               </div>
+
+
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label>Gender</label>
+                  <div>
+                    <select class="form-select form-control border border-dark" aria-label="Default select example">
+                      <option selected disabled>Select Gender</option>
+                      <option value="1">Male</option>
+                      <option value="2">Female</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- <div class="col-lg-6">
+                <div class="form-group">
+                  <label></label>
+                  <input type="text" class="form-control border border-dark" id="exampleInputUser" placeholder="Enter User Name">
+                </div>
+              </div> -->
 
             </div>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary btn-pill">Save Changes</button>
+          <button type="button" class="btn btn-primary btn-pill">Save</button>
         </div>
       </div>
     </div>

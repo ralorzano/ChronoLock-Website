@@ -167,16 +167,25 @@
       <div class="content">
 
 
-        <div class="d-flex justify-content-end"> <!-- Align content to the right -->
+        <div class="d-flex justify-content-between align-items-center">
+          <!-- Navigation -->
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+              <li class="breadcrumb-item active"><a href="admin-studattendance.php">Attendance</a></li>
+              <li class="breadcrumb-item active"><a href="admin-studattendance.php">Student Attendance</a></li>
+            </ol>
+          </nav>
+
           <!-- Live Date and Time -->
           <div>
-            <p class="text-center date-time" id="liveDateTime">Your Date and Time</p>
+            <p class="text-center date-time mb-3" id="liveDateTime">Your Date and Time</p>
           </div>
         </div>
 
         <!-- DROPRDOWN NAV -->
 
-        <div class="row mt-4">
+        <div class="row">
           <div class="col-xl-9 col-md-9">
             <!-- Example single primary button -->
             <div class="dropdown d-inline-block mb-3 ">
@@ -253,7 +262,7 @@
         </div>
         <!-- END -->
 
-        <div class="card card-default border border-dark">
+        <div class="card card-default">
           <div class="card-header">
             <h1>Student Realtime Attendance</h1>
           </div>

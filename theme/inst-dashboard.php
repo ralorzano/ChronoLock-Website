@@ -128,10 +128,17 @@
         <div class="content-wrapper">
             <div class="content">
 
-                <div class="d-flex justify-content-end mb-3"> <!-- Align content to the right -->
+            <div class="d-flex justify-content-between align-items-center">
+                    <!-- Navigation -->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="inst-dashboard.php">Dashboard</a></li>
+                        </ol>
+                    </nav>
+
                     <!-- Live Date and Time -->
                     <div>
-                        <p class="text-center date-time" id="liveDateTime">Your Date and Time</p>
+                        <p class="text-center date-time mb-3" id="liveDateTime">Your Date and Time</p>
                     </div>
                 </div>
 

@@ -17,7 +17,7 @@
   <title>ChronoLock Admin Dashboard</title>
 
   <?php include 'head.php' ?>
-  
+
   <!-- TOASTER -->
   <link href="plugins/toaster/toastr.min.css" rel="stylesheet">
 
@@ -179,21 +179,17 @@
     <div class="content-wrapper">
       <div class="content">
 
-        <!-- Live Date & Time
-            <div class="card card-default">
-            <div class="px-6 py-4">
-              <div class="row">
-                <div class="col-12">
-                  <p class="text-center display-4 date-time" id="liveDateTime"></p>
-                </div>
-              </div>
-            </div>
-          </div> -->
+        <div class="d-flex justify-content-between align-items-center">
+          <!-- Navigation -->
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+            </ol>
+          </nav>
 
-        <div class="d-flex justify-content-end mb-3"> <!-- Align content to the right -->
           <!-- Live Date and Time -->
           <div>
-            <p class="text-center date-time" id="liveDateTime">Your Date and Time</p>
+            <p class="text-center date-time mb-3" id="liveDateTime">Your Date and Time</p>
           </div>
         </div>
 

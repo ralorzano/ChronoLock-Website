@@ -122,21 +122,30 @@
         <div class="content-wrapper">
             <div class="content">
 
-                <div class="d-flex justify-content-end mb-3"> <!-- Align content to the right -->
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <!-- Navigation -->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="inst-dashboard.php">Dashboard</a></li>
+                            <li class="breadcrumb-item active"><a href="inst-class-record.php">Class Record</a></li>
+                        </ol>
+                    </nav>
+
                     <!-- Live Date and Time -->
                     <div>
-                        <p class="text-center date-time" id="liveDateTime">Your Date and Time</p>
+                        <p class="text-center date-time mb-2" id="liveDateTime">Your Date and Time</p>
                     </div>
                 </div>
 
-                <div class="card card-default border border-dark">
+                <div class="card card-default">
                     <div class="card-header">
                         <h1>My Class Record</h1>
                         <div class="row">
                             <div class="col-xl-12 col-md-12 d-flex justify-content-end">
                                 <!-- Sort button -->
                                 <div class="dropdown d-inline-block border border-dark rounded">
-                                    <button class="btn btn-primary fw-bold" type="button" data-toggle="modal" data-target="#modal-add-event">
+                                    <button class="btn btn-primary fw-bold" type="button"  data-toggle="modal" data-target="#exampleModalForm">
                                         <i class=" mdi mdi-file-plus"></i>
                                         Create Class Record
                                     </button>
@@ -145,6 +154,8 @@
                         </div>
                     </div>
                     <div class="card-body ">
+
+
                         <table id="example" class="table table-bordered table-hover" style="width:100%">
                             <thead class="table-dark">
                                 <tr>
@@ -170,12 +181,12 @@
                                                 Actions
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <button class="dropdown-item">
+                                                <a class="dropdown-item  type="button" data-toggle="modal" data-target="#exampleModalForm"">
                                                     <i class="mdi mdi-circle-edit-outline text-warning"></i>
-                                                    Edit</button>
-                                                <button class="dropdown-item">
+                                                    Edit</a>
+                                                <a class="dropdown-item">
                                                     <i class="mdi mdi-trash-can text-danger"></i>
-                                                    Delete</button>
+                                                    Delete</a>
                                             </div>
                                         </div>
                                     </th>
@@ -200,5 +211,73 @@
     </div>
     </div>
     </div>
+
+    <div class="modal fade" id="exampleModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalFormTitle" aria-hidden="true">
+    <div class="modal-dialog "  role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalFormTitle">Create Class Record</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="row">
+
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label>Program</label>
+                  <input type="text" class="form-control border border-dark" id=" " placeholder="Program">
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label>Year & Section</label>
+                  <input type="text" class="form-control border border-dark" id=" " placeholder="Year & Section">
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label>Course</label>
+                  <input type="text" class="form-control border border-dark" id=" " placeholder="Enter Course">
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label>Course Code</label>
+                  <input type="text" class="form-control border border-dark" id=" " placeholder="Enter Course Code">
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label>Course Name</label>
+                  <input type="text" class="form-control border border-dark" id=" " placeholder="Enter Course Name">
+                </div>
+              </div>
+
+              
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label>Instructor Name</label>
+                  <input type="text" class="form-control border border-dark" id=" " placeholder="ex. Edward L. Sotto">
+                </div>
+              </div>
+
+
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary btn-pill">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <?php include 'footer.php' ?>

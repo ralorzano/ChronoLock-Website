@@ -166,15 +166,25 @@
     <div class="content-wrapper">
       <div class="content">
 
-        <div class="d-flex justify-content-end mb-3"> <!-- Align content to the right -->
+        <div class="d-flex justify-content-between align-items-center">
+          <!-- Navigation -->
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="index.php">Dashboard</a></li>
+              <li class="breadcrumb-item active">
+                <a href="admin-pendingrfid.php"> Pending RFID Request</a></li>
+            </ol>
+          </nav>
+
           <!-- Live Date and Time -->
           <div>
-            <p class="text-center date-time" id="liveDateTime">Your Date and Time</p>
+            <p class="text-center date-time mb-3" id="liveDateTime">Your Date and Time</p>
           </div>
         </div>
 
 
-        <div class="card card-default border border-dark">
+        <div class="card card-default">
           <div class="card-header">
             <h1>RFID Pending Request</h1>
 

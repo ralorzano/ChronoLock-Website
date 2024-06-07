@@ -92,7 +92,7 @@
               <ul class="collapse" id="users" data-parent="#sidebar-menu">
                 <div class="sub-menu">
                   <li>
-                    <a class="sidenav-item-link" href="admin-studattendance.php">
+                    <a class="sidenav-item-link" href="admin-instattendance.php">
                       <span class="nav-text">Student Attendance</span>
 
                     </a>
@@ -150,7 +150,7 @@
           </ul>
         </div>
       </div>
-  </div>
+    </div>
   </aside>
 
   <!-- ====================================
@@ -166,15 +166,23 @@
     <div class="content-wrapper">
       <div class="content">
 
-        <div class="d-flex justify-content-end mb-3"> <!-- Align content to the right -->
+      <div class="d-flex justify-content-between align-items-center">
+          <!-- Navigation -->
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+              <li class="breadcrumb-item active"><a href="admin-rfidaccount.php">RFID Accounts</a></li>
+            </ol>
+          </nav>
+
           <!-- Live Date and Time -->
           <div>
-            <p class="text-center date-time" id="liveDateTime">Your Date and Time</p>
+            <p class="text-center date-time mb-3" id="liveDateTime">Your Date and Time</p>
           </div>
         </div>
 
       
-        <div class="card card-default border border-dark">
+        <div class="card card-default">
           <div class="card-header">
             <h1>RFID Accounts</h1>
           </div>
@@ -196,7 +204,7 @@
                   <td>1</td>
                   <td>Lorzano, Ralph H.</td>
                   <td>C21104744</td>
-                  <td>C21104744</td>
+                  <td>Student</td>
                   <td>BSIS</td>
                   <td>1A</td>
                   <th>
@@ -206,7 +214,7 @@
                         Actions
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <button class="dropdown-item">
+                        <button class="dropdown-item" type="button" data-toggle="modal" data-target="#exampleModalForm">
                           <i class="mdi mdi-circle-edit-outline text-warning"></i>
                           Edit</button>
                         <button class="dropdown-item">
@@ -221,7 +229,7 @@
                   <td>2</td>
                   <td>Sotto, Edward L.</td>
                   <td>C21123333</td>
-                  <td>C21123333</td>
+                  <td>Student Aide</td>
                   <td>BSIS</td>
                   <td>1A</td>
                   
@@ -256,8 +264,6 @@
       </div>
 
 
-
-
     </div>
   </div>
   </div>
@@ -278,21 +284,30 @@
 
               <div class="col-lg-6">
                 <div class="form-group">
-                  <label for="exampleInputPassword1">RFID Code</label>
-                  <input type="text" class="form-control border border-dark border border-dark" id="exampleInputRFID" placeholder="RFID Code">
+                  <label>Name</label>
+                  <input type="text" class="form-control border border-dark" id="exampleInputRFID" placeholder="ex. Sotto, Edward L.">
                 </div>
               </div>
 
               <div class="col-lg-6">
                 <div class="form-group">
-                  <label for="exampleInputUserType">Course</label>
+                  <label>RFID Code</label>
+                  <input type="text" class="form-control border border-dark" id="exampleInputRFID" placeholder="Enter RFID Code">
+                </div>
+              </div>
+
+
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label for="exampleInputUserType">User Type</label>
                   <div>
                     <select class="form-select form-control border border-dark" aria-label="Default select example">
-                      <option selected>Select Course</option>
-                      <option value="1">BSIS</option>
-                      <option value="2">BSIT</option>
-                      <option value="3">BSCS & Staff</option>
-                      <option value="3">BLIS</option>
+                      <option selected>Select User Type</option>
+                      <option value="1">Student</option>
+                      <option value="2">Student Aide</option>
+                      <option value="3">Instructor</option>
+                      <option value="3">Staff</option>
+                      <option value="4">Lab-In_Charge</option>
                     </select>
                   </div>
                 </div>
@@ -301,15 +316,23 @@
 
               <div class="col-lg-6">
                 <div class="form-group">
-                  <label for="exampleInputPassword1">User ID</label>
-                  <input type="text" class="form-control border border-dark" id="exampleInputUser" placeholder="Enter User ID">
+                  <label for="exampleInputUserType">Course</label>
+                  <div>
+                    <select class="form-select form-control border border-dark" aria-label="Default select example">
+                      <option selected>Select Course</option>
+                      <option value="1">BSIT</option>
+                      <option value="2">BSCS</option>
+                      <option value="3">BSIS</option>
+                      <option value="3">BLIS</option>
+                    </select>
+                  </div>
                 </div>
               </div>
 
               <div class="col-lg-6">
                 <div class="form-group">
-                  <label for="exampleInputPassword1">User Name</label>
-                  <input type="text" class="form-control border border-dark" id="exampleInputUser" placeholder="Enter User Name">
+                  <label>Year & Section</label>
+                  <input type="text" class="form-control border border-dark" id="exampleInputUser" placeholder="Ex. 1A">
                 </div>
               </div>
 

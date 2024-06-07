@@ -8,6 +8,7 @@ $(document).ready(function () {
         rowReorder: {
             selector: 'td:nth-child(2)'
         },
+        stateSave: true
         // "searching": false,
     } );
     });
